@@ -1,4 +1,3 @@
-
 // sass features
 @import "assets/stylesheets/var";
 @import "assets/stylesheets/mixin";
@@ -10,25 +9,25 @@
 @import "base/fonts";
 @import "base/typography";
 
-// buttons
-@import "block/buttons/btn";
-@import "block/buttons/btn-menu";
-@import "block/buttons/btn-home";
-@import "block/buttons/btn-calc";
-@import "block/buttons/btn-specials";
+// page template
+@import "block/page-template/page-header";
+@import "block/page-template/page-footer";
+@import "block/page-template/page-wrapper";
+@import "block/page-template/page-content";
 
-// single photo
-@import "block/photo";
+@import "block/page-template/container";
+// @import "block/grid/inner-page";
+
+@import "block/grid/grid";
+// cta
+@import "block/btn/btn";
+
+// photo
+@import "block/photo/photo";
 
 // icons
 @import "block/icons/icons";
 
-// grid & general layout
-@import "block/grid/container";
-// @import "block/grid/content-container";
-
-@import "block/grid/grid";
-@import "block/grid/inner-page";
 
 // footer
 @import "block/helper/helper";
@@ -37,123 +36,35 @@
 @import "block/swiper/swiper";
 
 // tabs
-@import "block/tabs/section-tabs";
+// @import "block/tabs/section-tabs";
 
-// page layout
-@import "block/page-header";
-@import "block/page-footer";
-@import "block/page-footer-small";
-@import "block/page-wrapper";
-@import "block/page-content";
 
 // menu
-@import "block/menu";
-@import "block/dropdown-nav";
-@import "block/obj-menu";
 
 // navigation
-@import "block/nav-main";
-@import "block/nav-full";
 
 // modal
-@import "block/modal/overlay";
 
 // hero
-@import "block/hero";
-@import "block/weather";
-@import "block/cta";
-
-// hero for objects
-@import "block/hero-object";
-@import "block/hero-object-thumbnail";
-
-
-// press
-@import "block/press-center";
-@import "block/press-section";
-
-// news
-@import "block/news-lead";
-@import "block/news-list";
-@import "block/news-link";
-
-// articles
-@import "block/articles-lead";
-@import "block/articles-list";
-@import "block/article-link";
-
-// blog
-@import "block/blog-lead";
-@import "block/blog-list";
-@import "block/blog-link";
-
-// events
-@import "block/event";
-
-// subscribe
-@import "block/subscribe";
-@import "block/follow-insta";
-
-// objects
-@import "block/objects";
-@import "block/objects-list";
-@import "block/object-thumbnail";
-@import "block/objects-container";
-
-// feedback
-@import "block/feedback-list-section";
-@import "block/feedback-list";
-@import "block/feedback-item";
-
-// contacts
-@import "block/contacts";
-
-// sidebar
-@import "block/block-sidebar";
-@import "block/object-sidebar";
-
-// infopraphics
-@import "block/infograph";
-
-// tel-line
-@import "block/tel-line";
-@import "block/social-link";
 
 // well
-@import "block/well";
-
-@import "block/person";
-
-@import "block/ref";
-
-@import "block/lead";
-
-@import "block/tagcontainer";
-@import "block/_contentcontainer";
-@import "block/feature";
-@import "block/number-list";
-@import "block/prompt";
-
-@import "block/b-photos";
-@import "block/b-photo";
-@import "block/photo-overflow-container";
-@import "block/photo-single";
-
+// @import "block/well";
+// @import "block/ref";
+// @import "block/lead";
 
 // animate lib
-@import "block/animate/animate";
+// @import "block/animate/animate";
 
 // misc
-@import "block/to-top";
-@import "block/helper";
+// @import "block/to-top";
 
 
 // video
-@import "block/video-link";
-@import "block/grtyoutube-popup";
+// @import "block/video-link";
+// @import "block/grtyoutube-popup";
 
 
 
 // accordeon
-@import "block/accordeon/accordeon";
+// @import "block/accordeon/accordeon";
 

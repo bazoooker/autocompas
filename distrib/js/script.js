@@ -73,11 +73,13 @@ $(document).ready(function(){
 
 
     // events slider on main page
-    var swiperEvents = new Swiper('.swiper-container', {
+    var swiperCatalog = new Swiper('.swiper-container-catalog', {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      slidesPerView: 4,
+      loop: true,
     });
 
     // slider on object page

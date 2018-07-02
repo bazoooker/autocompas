@@ -4,7 +4,7 @@
 .h-uppercase {
 	text-transform: uppercase;
 }
-.h-bg-gray {
+.bg-gray {
 	background-color: #eee;
 }
 .h-full-width {
@@ -15,8 +15,11 @@
 	margin-right: -2rem;
 }
 
-.h-section-margin {
+.section-margin {
 	margin-bottom: 4rem;
+}
+.section-padding {
+	padding: 4rem 0 4rem 0;
 }
 .h-no-bullets {
 	list-style: none;

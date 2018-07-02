@@ -1,0 +1,33 @@
+.prompt {
+	display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 15px 0;
+
+    a {
+    	font-size: 13px;
+	    text-decoration: none;
+	    color: #888;
+	    display: inline-block;
+	    margin: 0 10px 0 0;
+
+	    transition: 200ms;
+
+	    &:hover {
+	    	color: $color_blue-l;
+	    	text-decoration: underline;
+	    }
+    }
+    span.promptsep {
+    	display: inline-block;
+	    line-height: 10px;
+	    margin: 0 10px 0 0;
+	    color: #888;
+
+	    &:after {
+	    	display: inline-block;
+    		content: '>';
+	    }
+    }
+}

@@ -1,0 +1,54 @@
+.social-link {
+	flex: 0 0 6rem;
+	cursor: pointer;
+	text-align: center;
+	margin: .5rem 0 0 0;
+
+	&:hover {
+		.social-link__icon {
+			box-shadow: 0 0 0 3px #fff;
+		}		
+	}
+}
+
+.social-link__icon {
+	display: inline-block;
+	border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+	// background-color: #fff;
+	background-color: $color_blue-d;
+	background-size: 2.2rem;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    transition: 300ms;
+
+}
+
+// @media screen and (min-width: 569px) and (max-width: 850px) {
+// 	.social-link {
+// 		flex: 1 1 28%;
+// 	}
+// }
+
+
+@media screen and (max-width: 568px) {
+	.social-link {
+		flex: 0 0 6rem;
+    	margin: 0 0 0 0;
+	}
+
+}
+
+@media screen and (max-width: 460px) {
+	.social-link__icon {
+	    height: 3.5rem;
+	    width: 3.5rem;
+		background-size: 1.6rem;
+
+	}
+	.social-link {
+		flex: 0 0 3.5rem;
+	}
+}

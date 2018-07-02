@@ -1,0 +1,247 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Acrom', sans-serif;
+    font-weight: 400;
+    color: #5e5e5e;
+}
+body {
+    font-size: 1.4rem;
+}
+h1 {
+    font-size: 3.8rem;
+    line-height: 4.3rem;
+    font-weight: 500;
+    color: $color_blue-d;
+    margin: 0 0 $gutter 0;
+    .subheading {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: $color_blue-d;
+    }
+}
+h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: $color_blue-d;
+    margin: 0 0 $gutter 0;
+    .subheading {
+        font-size: 2.2rem;
+        font-weight: 500;
+        color: $color_blue-d;
+    }
+}
+h3 {
+    font-size: 2.2rem;
+    color: $color_main-dark;
+    font-weight: 600;
+    margin: 0 0 $gutter 0;
+}
+.heading-theme {
+    position: relative;
+    padding: 0 0 $gutter 0;
+    margin: 0 0 $gutter 0;
+    &:after {
+        @include pseudo;
+        width: 5rem;
+        height: .2rem;
+        left: 0;
+        bottom: 0;
+        // background: #4ba1d2;
+    }
+}
+    .heading-theme_blue {
+        &:after {
+            background: $color_blue-l;
+        }
+    }
+    .heading-theme_red {
+        &:after {
+            background: #990000;
+        }
+    }
+    .heading-theme_green {
+        &:after {
+            background: $color_green-l;
+        }
+    }
+    
+section {
+    background-color: #fff;
+    h1:first-child, h2:first-child, h3:first-child {
+        margin-top: 0;
+    }
+}
+p, span, ul, li, button {
+    color: #5e5e5e;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+}
+p {
+    margin-top: 0;
+    &:empty {
+        display: none;
+    }
+}
+a {
+    color: $color_main;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    color: #296d5c;
+}
+a:focus {
+    color: #1b997b;
+}
+table {
+    width: 100%;
+}
+table tr {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    position: relative;
+    ovarflow: hidden;
+    td {
+        padding: .7rem 1.5rem;
+    }
+    &:nth-child(odd) {
+        td {
+            background-color: #fff;
+        }
+    }
+    &:nth-child(even) {
+        td {
+            background-color: #e3f2ff;
+        }
+    }
+}
+table.guestbook-switch tr td {
+    padding: 0;
+}
+ul {
+    padding-left: 1.3rem;
+    margin-left: 0;
+    li {
+        position: relative;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+        list-style-image: url(/img/icons/i-list-bullet.png); 
+
+        // &:before {
+        //     @include pseudo;
+        //     left: -2.6rem;
+        //     top: .5rem;
+        //     width: .8rem;
+        //     height: .8rem;
+        //     border-radius: 50%;
+        //     background-color: $color_blue-l;
+        // }
+    }
+}
+.made-by {
+    // padding: 5rem 0;
+    color: #fff;
+    font-size: 1.2rem;
+    opacity: .6;
+}
+.e1media-link {
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    padding: 3.2rem 0 0 0;
+    transition: 400ms;
+
+    &:after {
+        @include pseudo;
+        top: -10px;
+        opacity: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 3rem;
+        height: 3rem;
+
+        background-image: url(/img/icons/i-crown_white.png);
+        background-size: 3rem;
+        background-repeat: no-repeat;
+        background-position: 50% 25%;
+
+        transition: 400ms;
+    }
+    &:visited {
+        color: #fff;
+    }
+    &:hover {
+        background-position: 50% 0%;
+        &:after {
+            top: 0;
+            opacity: 1;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 3.3rem;
+        .subheading {
+            font-size: 2.2rem;
+        }
+    }
+    h2 {
+        font-size: 2.5rem;
+        .subheading {
+            font-size: 1.9rem;
+        }
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    h1 {
+        line-height: 3.8rem;
+    }
+    .made-by {
+        float: none;
+    }
+    table tr {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        position: relative;
+        ovarflow-x: scroll;
+        td {
+            padding: .7rem 1rem;
+        }
+    }
+}
+@media screen and (max-width: 569px) {
+    h1 {
+        font-size: 3rem;
+        line-height: 3.4rem;
+        .subheading {
+            font-size: 2.1rem;
+        }
+    }
+    h2 {
+        font-size: 2.2rem;
+        .subheading {
+            font-size: 1.9rem;
+        }
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+    table tr {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        position: relative;
+        ovarflow: hidden;
+        td {
+            padding: .5rem .5rem;
+        }
+    }
+}

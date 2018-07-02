@@ -1,0 +1,101 @@
+.objects {
+	padding: $gutter $gutter 1px $gutter;
+	background-color: #fff;
+}
+
+.objects__filter {
+	@include flex-row(nowrap, justify-content, flex-start);
+	width: 100%;
+	padding: 0 0 1.8rem 0;
+	margin: 0 0 2.8rem 0;
+	border-bottom: 2px solid #efefef;
+}
+
+.objects__filter-links {
+	flex: 1 1 80%;
+	list-style: none;
+	margin: 0 3rem 0 0;
+	padding-left: 0;
+
+	@include flex-row(wrap, flex-start, flex-start);
+
+	li {
+		margin-bottom: 1rem;
+		list-style: none;
+		a {
+			display: block;
+		    padding: .7rem 2rem;
+		    text-decoration: none;
+		    font-size: 1.6rem;
+		    font-weight: 500;
+		    color: #296495;
+		    -webkit-transition: 300ms;
+		    -o-transition: 300ms;
+		    transition: 300ms;
+		    background-color: #f3f3f3;
+		    margin-right: 1rem;
+
+			&.active {
+				background-color: $color_green-l;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.objects__display-mode {
+	flex: 0 0 13.5rem;
+	height: 3rem;
+
+	background-color: $color_blue-l;
+
+	cursor: pointer;
+
+	@include flex-row(nowrap, justify-content, center);
+
+	span {
+		color: #fff;
+		font-size: 1.5rem;
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+	.objects {
+		padding: 1rem 1rem 0 1rem;
+		background-color: #fff;
+	}
+}
+
+@media screen and (max-width: 567px) {
+	.objects {
+		padding: 0;
+		background-color: #fff;
+	}
+
+	.objects__filter {
+		@include flex-row(wrap, justify-content, flex-start);
+	}
+
+	.objects__filter-links {
+		flex: 1 1 100%;
+		margin: 1rem;
+
+		li {
+			margin-bottom: 1rem;
+			flex: 1 1 100%;
+
+			a {
+			    font-size: 1.4rem;
+			    margin-right: 0;
+			}
+		}
+	}
+
+	.objects__display-mode {
+		margin-right: auto;
+    	margin-left: auto;	
+	}
+}
+
+    

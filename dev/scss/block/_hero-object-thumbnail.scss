@@ -1,0 +1,69 @@
+.hero-object-thumbnail {
+	flex: 0 1 12rem;
+	position: relative;
+
+	margin-right: 3rem;
+
+	height: 100%;
+
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	border: 1px solid #fff;
+
+	opacity: .6;
+
+	cursor: pointer;
+
+	transition: 300ms;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:after {
+		@include pseudo;
+
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		width: 100%;
+		height: 100%;
+
+		background-color: black;
+		opacity: .6;
+
+		transition: 400ms;
+
+	}
+
+}
+
+.hero-object-thumbnail_active {
+	opacity: 1;
+	transform: scale(1.1);
+
+	&:after {
+		opacity: 0;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.hero-object-thumbnail {
+		flex: 0 1 10rem;
+	}
+}
+
+@media screen and (max-width: 667px) {
+	.hero-object-thumbnail {
+		flex: 0 1 5.5rem;
+		margin-right: .5rem;
+		&:last-child {
+			margin-right: 0;
+		}
+
+	}
+}

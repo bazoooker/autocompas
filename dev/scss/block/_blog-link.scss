@@ -1,0 +1,39 @@
+.blog-link {
+	flex: 1 1 40%;
+	margin-right: $gutter;
+	display: block;
+	cursor: pointer;
+	text-decoration: none;
+
+	&:nth-child(even) {
+		margin-right: 0;
+	}
+
+	&:hover {
+		.blog-link__heading {
+			text-decoration: underline;
+		}
+	}
+}
+
+.blog-link__heading {
+	color: $color_blue-l;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin: .5rem 0 1rem 0;
+}
+
+.blog-link__date {
+	font-size: 1.2rem;
+    color: #515151;
+    opacity: .5;
+}
+
+
+
+
+@media screen and (max-width: 567px) {
+	.blog-link {
+		flex: 1 1 100%;
+	}
+}

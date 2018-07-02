@@ -1,0 +1,5 @@
+.feedback-list {
+	position: relative;
+	// @include flex-row(nowrap, justify-content, center);
+	overflow: hidden;
+}

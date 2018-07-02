@@ -1,0 +1,22 @@
+.block-sidebar {
+	width: 100%;
+	@include flex-row(nowrap, justify-content, flex-start);
+
+	h2:first-child {
+		margin-top: 0;
+	}
+}
+.block-sidebar__block {
+	flex: 1 0 65%;
+	margin-right: $gutter;
+}
+.block-sidebar__sidebar {
+	flex: 1 0 25%;
+
+	.btn {
+		font-size: 1.2rem;
+	    padding: 1rem 1.5rem;
+	    line-height: 20px;
+	    transition: 300ms;
+	}
+}

@@ -1,0 +1,25 @@
+.phone {
+	position: relative;
+	color: #000;
+	font-size: 2.2rem;
+	font-weight: 600;
+	padding: 0 2rem 0 0;
+	cursor: pointer;
+
+	&:after {
+		@include pseudo;
+		right: 0;
+		top: 48%;
+		transform: translateY(-50%) rotate(45deg);
+		width: .6rem;
+		height: .6rem;
+		background: transparent;
+		border-bottom: 2px solid $color_main-b;
+		border-right: 2px solid $color_main-b;
+	}
+}
+.phone__city-code {
+	font-size: 1.4rem;
+	font-weight: 400;
+	color: #8f8f8f;
+}

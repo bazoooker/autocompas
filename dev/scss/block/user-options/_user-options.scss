@@ -1,0 +1,35 @@
+.user-options {
+	margin-left: auto;
+	z-index: 2;
+
+	a {
+		position: relative;
+		margin: 0 2.1rem 0 0;
+		padding: 1.2rem 0 1.2rem 3rem;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:before  {
+			@include pseudo;
+			left: 0;
+			top: 48%;
+			transform: translateY(-.9rem);
+			width: 1.8rem;
+			height: 1.8rem;
+			background-size: 17px;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+	}
+}
+
+.user-options__cabinet:before {
+	background-image: url(/img/icons/cabinet.png);
+}
+.user-options__callback:before {
+	background-image: url(/img/icons/phone.png);
+}

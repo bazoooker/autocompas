@@ -1,76 +1,121 @@
 .page-header {
-
 	color: #fff;
 	z-index: 10;
+}
 
-	&:before {
+.page-header__top-bar {
+	position: relative;
+	height: 4rem;
+	background-color: #fbfbfb;
+
+	&:before{
 		@include pseudo;
-		top: 0;
 		left: 0;
-		right: 0;
-		height: 5rem;
-		// background-color: rgb(255,255,255);
-		// background-color: rgba(255,255,255,.3);
+		top: 0;
+		width: 40%;
+		height: 100%;
 
-		background-color: #4ba1d2;
-		opacity: .9;
+		background-image: -ms-linear-gradient(left, #DCDCDC 0%, transparent 100%);
+		background-image: -moz-linear-gradient(left, #DCDCDC 0%, transparent 100%);
+		background-image: -o-linear-gradient(left, #DCDCDC 0%, transparent 100%);
+		background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #DCDCDC), color-stop(100, transparent));
+		background-image: -webkit-linear-gradient(left, #DCDCDC 0%, transparent 100%);
+		background-image: linear-gradient(to right, #DCDCDC 0%, transparent 100%);
+
+		z-index: 1;
+		opacity: .7;
+	}
+	&:after{
+		@include pseudo;
+		right: 0;
+		top: 0;
+		width: 40%;
+		height: 100%;
+
+		background-image: -ms-linear-gradient(right, #DCDCDC 0%, transparent 100%);
+		background-image: -moz-linear-gradient(right, #DCDCDC 0%, transparent 100%);
+		background-image: -o-linear-gradient(right, #DCDCDC 0%, transparent 100%);
+		background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #DCDCDC), color-stop(100, transparent));
+		background-image: -webkit-linear-gradient(right, #DCDCDC 0%, transparent 100%);
+		background-image: linear-gradient(to left, #DCDCDC 0%, transparent 100%);
+
+		z-index: 1;
+		opacity: .7;
 
 	}
+	.container {
+		@include flex-row(nowrap, space-between, center);
+		height: 100%;
+		z-index: 2;
+	}
+}
+
+.page-header__content {
+	
+	.container {
+		@include flex-row(nowrap, space-between, center);
+		height: 13.3rem;
+
+	}
+}
+
+
+.page-header__bottom-bar {
+	
+	height: 5.5rem;
+	background-color: #1d70be;
+	background-image: url(/img/bg/bg-bottom-bar.jpg);
+	@include bg-cover;
 
 	.container {
-		position: relative;
-		@include flex-row(nowrap, space-between, flex-start);
+		@include flex-row(nowrap, space-between, center);
+		height: 100%;
 	}
 }
 
+// .page-header_sticky {
+// 	position: fixed !important;
+// 	top: 0;
+// 	left: 0;
+// 	right: 0;
+// 	width: 100%;
+// 	z-index: 19;
 
-.page-header_sticky {
-	position: fixed !important;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	z-index: 19;
+// 	.logo {
+//     	width: 8rem;
+//     	height: 5rem;
 
-	.logo {
-		// width: 21rem;
-    	// height: 5rem;
-    	// background-image: url(/img/logo-horiz.svg);
-    	width: 8rem;
-    	height: 5rem;
-    	// background-size: cover;
+// 	    background-size: 11rem;
+//     	background-position: 50% 10%;
 
-	    background-size: 11rem;
-    	background-position: 50% 10%;
+// 	}
 
-	}
+// 	#progress {
+// 		position: absolute;
+// 		bottom: -2px;
+// 		left: 0;
+// 		width: 0%;
+// 		height: 2px;
+// 		background-color: gray;
+// 	}
+// }
 
-	#progress {
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0%;
-		height: 2px;
-		background-color: gray;
-	}
-}
-
-.page-header_small {
+// .page-header_small {
 	
-		.logo {
-    	width: 8rem;
-    	height: 5rem;
+// 		.logo {
+//     	width: 8rem;
+//     	height: 5rem;
 
-	    background-size: 11rem;
-    	background-position: 50% 10%;
+// 	    background-size: 11rem;
+//     	background-position: 50% 10%;
 
-	}
-}
+// 	}
+// }
 
 
 
-@media screen and (max-width: 413px) {
-	.page-header .logo {
-		width: 6rem;
-	}
-}
+// @media screen and (max-width: 413px) {
+// 	.page-header .logo {
+// 		width: 6rem;
+// 	}
+// }

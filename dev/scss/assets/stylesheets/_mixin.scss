@@ -17,3 +17,16 @@
 	position: absolute;
 	content: '';
 }
+
+@mixin bg-contain {
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-cover {
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+

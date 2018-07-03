@@ -11,22 +11,32 @@
 
 // page template
 @import "block/page-template/page-header";
-@import "block/page-template/page-footer";
-@import "block/page-template/page-wrapper";
-@import "block/page-template/page-content";
+// @import "block/page-template/page-footer";
+// @import "block/page-template/page-wrapper";
+// @import "block/page-template/page-content";
 
 @import "block/page-template/container";
 // @import "block/grid/inner-page";
 
 @import "block/grid/grid";
-// cta
+
+@import "block/nav/nav";
+@import "block/user-options/user-options";
+@import "block/logo/logo";
+
+
+@import "block/basket/basket";
+@import "block/location/location";
+@import "block/phone/phone";
+@import "block/company-info/company-info";
+
 @import "block/btn/btn";
 
 // photo
-@import "block/photo/photo";
+// @import "block/photo/photo";
 
 // icons
-@import "block/icons/icons";
+// @import "block/icons/icons";
 
 
 // footer

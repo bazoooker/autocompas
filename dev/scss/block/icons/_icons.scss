@@ -1,26 +1,4 @@
-.logo {
-	display: inline-block;
-	width: 30rem;
-	height: 17.5rem;
-	text-decoration: none;
-	
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
 
-	transition: 100ms;
-	background-image: url(/img/logo-vert.svg); 
-	background-size: 30rem;
-
-	// &:hover {
-	// 	opacity: .75;
-	// }
-
-	// &:visited {
-	// 	color: #fff;
-	// }
-}
-
-/* icon layout */
 
 .icon {
 	@include flex-row(wrap, space-between, flex-start);

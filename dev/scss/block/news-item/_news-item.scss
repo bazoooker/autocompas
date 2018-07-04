@@ -1,0 +1,31 @@
+.news-item {
+	flex: 1 1 22%;
+	margin: 0 $gutter 0 0;
+
+	border-radius: 6px;
+	overflow: hidden;
+
+	background-color: #fff;
+
+	text-decoration: none;
+	cursor: pointer;
+
+	&:last-child {
+		margin: 0 0 0 0;
+	}
+}
+
+.news-item__img {
+	height: 16.8rem;
+	width: 100%;
+	@include bg-cover;
+}
+.news-item__heading {
+	display: block;
+	padding: $gutter;
+
+	font-size: 1.6rem;
+	font-weight: 300;
+	line-height: 130%;
+	text-decoration: none;
+}

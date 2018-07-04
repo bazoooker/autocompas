@@ -1,0 +1,12 @@
+.catalog-list {
+	.col-3 {
+		border-right: 1px solid #dfdfdf;
+		&:last-child {
+			border-right: 0;
+		}
+
+		a:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -74,20 +74,21 @@ $(document).ready(function(){
 
     var swiperCatalog = new Swiper('.swiper-container-catalog', {
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.catalog-slider-btn-next',
+        prevEl: '.catalog-slider-btn-prev',
       },
       slidesPerView: 4,
-      loop: true,
+      spaceBetween: 19,
+      // loop: true,
     });
 
     var swiperBrands = new Swiper('.swiper-container-brands', {
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.brands-slider-btn-next',
+        prevEl: '.brands-slider-btn-prev',
       },
-      slidesPerView: 4,
-      loop: true,
+      slidesPerView: 7,
+      // loop: true,
     });
 
     // slider on object page

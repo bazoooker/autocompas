@@ -11,9 +11,9 @@
 
 // page template
 @import "block/page-template/page-header";
-// @import "block/page-template/page-footer";
-// @import "block/page-template/page-wrapper";
-// @import "block/page-template/page-content";
+@import "block/page-template/page-footer";
+@import "block/page-template/page-wrapper";
+@import "block/page-template/page-content";
 
 @import "block/page-template/container";
 // @import "block/grid/inner-page";
@@ -44,6 +44,30 @@
 
 // swiper
 @import "block/swiper/swiper";
+@import "block/swiper/slide-category";
+@import "block/catalog-slider/catalog-slider";
+
+@import "block/brands-slider/brands-slider";
+@import "block/brand-holder/brand-holder";
+
+
+
+@import "block/catalog-list/catalog-list";
+@import "block/catalog-link/catalog-link";
+
+@import "block/cta-stripe/cta-stripe";
+
+
+@import "block/news/news";
+@import "block/news-item/news-item";
+
+@import "block/contacts/contacts";
+
+
+
+
+
+@import "block/category/category";
 
 // tabs
 // @import "block/tabs/section-tabs";
@@ -66,7 +90,7 @@
 // @import "block/animate/animate";
 
 // misc
-// @import "block/to-top";
+@import "block/to-top/to-top";
 
 
 // video

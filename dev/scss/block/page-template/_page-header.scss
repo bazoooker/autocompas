@@ -71,6 +71,11 @@
 		@include flex-row(nowrap, space-between, center);
 		height: 100%;
 	}
+
+	form {
+	    flex: 1 1 100%;
+    	margin: 0 30px 0 20px;
+	}
 }
 
 // .page-header_sticky {

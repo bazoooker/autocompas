@@ -8,9 +8,17 @@
 	cursor: pointer;
 	text-decoration: none;
 
-	// &:hover {
- //    	transform: translateY(-4px);
-	// }
+	&:hover {
+		.category__info {
+			p {
+				color: $color_main-r;
+			}
+		}
+	}
+
+	&:hover .category__img {
+		animation: animate-zoom .4s ease;
+	}
 }
 
 
@@ -26,10 +34,12 @@
 	}
 
 	.category__info {
+		transition: $tr;
 		p {
 			margin: 0 0 .4rem 0;
 			font-size: 1.4rem;
 			font-weight: 300;
+			transition: $tr;
 		}
 		p:last-of-type {
 			margin: 0 0 1.3rem 0;
@@ -40,6 +50,7 @@
 			font-size: 1.2rem;
 			font-weight: 300;
 			color: gray;
+			transition: $tr;
 
 		}
 	}

@@ -1,0 +1,33 @@
+.product-list {
+
+}
+
+.product-list__header {
+	@include flex-row(nowrap, flex-start, stretch);
+	background-color: gainsboro;
+	padding: 1.3rem;
+	background-color: #efefef;
+	color: #9e9d9d;
+	font-size: 1.6rem;
+	font-weight: 300;
+}
+
+.product-list__name {
+	flex: 0 1 50%;
+}
+.product-list__brand {
+	flex: 0 1 15%;
+}
+.product-list__art {
+	flex: 0 1 25%;
+}
+.product-list__avail {
+	flex: 0 1 10%;
+}
+.product-list__price {
+	flex: 0 1 10%;
+}
+.product-list__controls {
+	flex: 0 0 12%;
+	min-width: 12.6rem;
+}

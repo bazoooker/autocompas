@@ -1,0 +1,34 @@
+.breadcrumbs {
+	display: inline-block;
+	background-color: #fff;
+	padding: .6rem 1.5rem .6rem 1.8rem;
+	border-radius: 6px;
+	z-index: 2;
+}
+.breadcrumbs__item {
+	position: relative;
+	display: inline-block;
+	font-size: 1.2rem;
+	color: gray;
+	margin: 0 .5rem 0 0;
+	padding: .5rem;
+	text-decoration: none;
+
+	&:after {
+		position: absolute;
+		content: '/';
+		right: -.7rem;
+		top: 50%;
+
+		transform: translateY(-50%);
+	}
+
+	&:last-child:after {
+		display: none;
+	}
+
+	&:hover {
+		color: $color_main-r;
+		text-decoration: underline;
+	}
+}

@@ -8,21 +8,21 @@ body {
     font-size: 1.4rem;
 }
 h1 {
-    font-size: 3.8rem;
-    line-height: 4.3rem;
-    font-weight: 500;
-    color: $color_blue-d;
+    font-size: 3.1rem;
+    line-height: 100%;
+    font-weight: 300;
+    color: $color_main-b;
     margin: 0 0 $gutter 0;
 }
 h2 {
     font-size: 3rem;
-    font-weight: 500;
-    color: $color_blue-d;
+    font-weight: 300;
+    color: $color_main-b;
     margin: 0 0 $gutter 0;
 }
 h3 {
     font-size: 2.2rem;
-    color: $color_main-dark;
+    color: $color_main-b;
     font-weight: 600;
     margin: 0 0 $gutter 0;
 }
@@ -99,6 +99,7 @@ ul {
     color: #fff;
     font-size: 1.2rem;
     opacity: .6;
+    margin: 4rem 0 0 0;
 }
 .e1media-link {
     position: relative;

@@ -1,0 +1,48 @@
+.product {
+	@include flex-row(nowrap, flex-start, stretch);
+	padding: 1rem 1.3rem 1rem 1.3rem;
+	font-size: 1.6rem;
+
+	&:nth-of-type(odd) {
+		background-color: #f7f7f7;
+	}
+}
+.product__price,
+.product__controls,
+.product__avail,
+.product__art,
+.product__brand,
+.product__name {
+	@include flex-row(nowrap, flex-start, center);
+}
+
+.product__name {
+	flex: 0 1 50%;
+	font-weight: 600;
+	text-decoration: underline;
+	color: #5e5e5e;
+	cursor: pointer;
+}
+.product__brand {
+	flex: 0 1 15%;
+	font-weight: 400;
+}
+.product__art {
+	flex: 0 1 25%;
+	font-weight: 400;
+}
+.product__avail {
+	flex: 0 1 10%;
+	font-weight: 400;
+}
+.product__price {
+	flex: 0 1 10%;
+	color: $color_main-b;
+	font-weight: 600;
+}
+.product__controls {
+	flex: 0 0 12%;
+	min-width: 12.6rem;
+
+	@include flex-row(nowrap, space-between, center);
+}

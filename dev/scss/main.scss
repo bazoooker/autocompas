@@ -14,9 +14,10 @@
 @import "block/page-template/page-footer";
 @import "block/page-template/page-wrapper";
 @import "block/page-template/page-content";
+@import "block/inner-page-header/inner-page-header";
 
 @import "block/page-template/container";
-// @import "block/grid/inner-page";
+@import "block/inner-page/inner-page";
 
 @import "block/grid/grid";
 
@@ -33,10 +34,10 @@
 @import "block/btn/btn";
 
 // photo
-// @import "block/photo/photo";
+// @import "block/photo/photo";f
 
 // icons
-// @import "block/icons/icons";
+@import "block/icons/icons";
 
 
 // footer
@@ -45,6 +46,7 @@
 // swiper
 @import "block/swiper/swiper";
 @import "block/swiper/slide-category";
+@import "block/category/category";
 @import "block/catalog-slider/catalog-slider";
 
 @import "block/brands-slider/brands-slider";
@@ -64,10 +66,21 @@
 @import "block/contacts/contacts";
 
 
+@import "block/contacts/contacts";
+@import "block/search-form/search-form";
+
+// products
+@import "block/product-list/product-list";
+@import "block/product/product";
+@import "block/quantity-counter/quantity-counter";
+
+// product-detail
+@import "block/product-detail/product-detail";
 
 
 
-@import "block/category/category";
+
+@import "block/breadcrumbs/breadcrumbs";
 
 // tabs
 // @import "block/tabs/section-tabs";
@@ -78,6 +91,8 @@
 // navigation
 
 // modal
+@import "block/modal/overlay";
+@import "block/modal/modal";
 
 // hero
 

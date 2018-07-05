@@ -9,6 +9,12 @@
 
 	text-decoration: none;
 
+	&:hover {
+		.basket__price {
+			color: $color_main-r;
+		}
+	}
+
 	&:before {
 		@include pseudo;
 
@@ -19,6 +25,8 @@
 		width: 2.5rem;
 		background-image: url(/img/icons/basket.png);
 		@include bg-contain;
+
+		transition: $tr;
 	}
 }
 .basket__contents {
@@ -34,4 +42,5 @@
 	font-size: 1.4rem;
 	font-weight: 600;
 	line-height: 120%;
+	transition: $tr;
 }

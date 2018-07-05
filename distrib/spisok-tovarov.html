@@ -1,0 +1,405 @@
+<!-- список подгрупп -->
+<!DOCTYPE html>
+<html lang="ru">
+
+
+    <head>
+        <!-- initial -->
+        <meta charset="utf-8" />
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <!-- title -->
+        <title>
+              Автокомпас
+        </title>
+
+        <!-- meta -->
+        <meta content="Автокомпас" name="description" />
+        <meta content="Автокомпас" name="keywords" />
+
+        <!-- styles -->
+        <link href="css/swiper.min.css" rel="stylesheet"/>            
+        <link href="css/main.css" rel="stylesheet"/>        <!-- gulp -->
+        <link href="css/custom.css" rel="stylesheet"/>      <!-- css no preprocessor -->
+    </head>
+
+
+
+
+    <body class="page-wrapper">
+            
+        <!-- HEADER BEGIN --> 
+        <header class="page-header">
+
+
+            <div class="page-header__top-bar">
+                <div class="container">
+                    <nav class="nav">
+                        <a class="active" href="#">Главная</a>
+                        <a href="#">О компании</a>
+                        <a href="#">Оплата и доставка</a>
+                        <a href="#">Оптовикам</a>
+                        <a href="#">Партнеры</a>
+                        <a href="#">Контакты</a>
+                    </nav>
+
+                    <div class="user-options">
+                        <a href="#" class="user-options__cabinet">Личный кабинет</a>
+                        <a href="#" class="user-options__callback">Перезвоните мне!</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page-header__content">
+                <div class="container">
+                    <a href="/" class="logo animated"></a>
+                    <a href="#" class="basket">
+                        <div class="basket__inner">
+                            <span class="basket__contents">В Вашей корзине 5 товаров</span>
+                            <span class="basket__price">на 12 850р.</span>
+                        </div>
+                    </a>
+                    <div class="company-info">
+                        <div class="location">
+                            Барнаул
+                        </div>
+                        <div class="phone">
+                            <span class="phone__city-code">+7(3852)</span> 46-47-00
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page-header__bottom-bar">
+                <div class="container">
+                    <a href="#" class="btn-catalog">
+                        <div class="btn-burger js-open-menu">
+                            <i class="btn-burger__bar"></i>
+                            <i class="btn-burger__bar"></i>
+                            <i class="btn-burger__bar"></i>
+                        </div>
+                        Каталог товаров
+                    </a>
+                        <form action="#">
+                        <div class="search-form">                                            
+                            <input type="text" placeholder="Например, гидроизоляция" id="search-text" name="q">
+                            <input type="submit" id="search-submit" value="">
+                        </div>
+                    </form>
+                    <a href="#" class="btn-catalog-brand">Каталог производителей</a>
+                </div>
+            </div>
+
+
+
+            <div id="progress"></div>
+        </header>
+        <!-- HEADER END --> 
+
+
+
+
+        <!-- PAGE CONTENT BEGIN -->            
+        <main class="page-content inner-page" role="main">
+
+            <div class="inner-page-header section-margin">
+
+                <div class="container">
+                    <h1>Автозапчасти для отечественных автомобилей</h1>
+
+                    <div class="inner-page__controls">
+                        <div class="breadcrumbs">
+                            <a href="#" class="breadcrumbs__item">
+                                <span class="icon-home"></span>
+                            Главная</a>
+                            <a href="#" class="breadcrumbs__item">Каталог</a>
+                            <a href="#" class="breadcrumbs__item">Автозапчасти для отечественных автомобилей</a>
+                            <a href="#" class="breadcrumbs__item">Бензонасосы</a>
+                        </div>
+                        
+                        <div class="brand-select">
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container section-margin">
+
+                <div class="product-list">
+
+                    <div class="product-list__header">
+                        <div class="product-list__name">Наименование</div>
+                        <div class="product-list__brand">Бренд</div>
+                        <div class="product-list__art">Артикул</div>
+                        <div class="product-list__avail">Наличие</div>
+                        <div class="product-list__price">Цена</div>
+                        <div class="product-list__controls"></div>
+                    </div>
+                    
+                    <div class="product js-product-modal">
+                        <a class="product__name">Бензонасос ВАЗ-2101 ДААЗ (Тольятти) упак. с гологр.</a>
+                        <div class="product__brand">Шанс+</div>
+                        <div class="product__art">2101-1106010</div>
+                        <div class="product__avail">нет</div>
+                        <div class="product__price">410 р.</div>
+                        <div class="product__controls">
+                            <div class="quantity-counter">
+                                <a class="quantity-counter__minus"></a>
+                                <div class="quantity-counter__input">
+                                    <input type="text" value="1" rel="1">
+                                </div>
+                                <a class="quantity-counter__plus"></a>
+                            </div>
+                            <a href="#" class="btn btn_buy"></a>                        
+                        </div>
+                    </div>
+
+                     <div class="product js-product-modal">
+                        <a class="product__name">Бензонасос ВАЗ-2101 (Ульяновск) Шанс+</a>
+                        <div class="product__brand">Шанс+</div>
+                        <div class="product__art">2101-1106010</div>
+                        <div class="product__avail">нет</div>
+                        <div class="product__price">410 р.</div>
+                        <div class="product__controls">
+                            <div class="quantity-counter">
+                                <a class="quantity-counter__minus"></a>
+                                <div class="quantity-counter__input">
+                                    <input type="text" value="1" rel="1">
+                                </div>
+                                <a class="quantity-counter__plus"></a>
+                            </div>
+                            <a href="#" class="btn btn_buy"></a>                        
+                        </div>
+                    </div>
+
+                     <div class="product js-product-modal">
+                        <a class="product__name">Бензонасос ВАЗ-2101 (Ульяновск) Шанс+</a>
+                        <div class="product__brand">Шанс+</div>
+                        <div class="product__art">2101-1106010</div>
+                        <div class="product__avail">нет</div>
+                        <div class="product__price">410 р.</div>
+                        <div class="product__controls">
+                            <div class="quantity-counter">
+                                <a class="quantity-counter__minus"></a>
+                                <div class="quantity-counter__input">
+                                    <input type="text" value="1" rel="1">
+                                </div>
+                                <a class="quantity-counter__plus"></a>
+                            </div>
+                            <a href="#" class="btn btn_buy"></a>                        
+                        </div>
+                    </div>
+
+                     <div class="product js-product-modal">
+                        <a class="product__name">Бензонасос ВАЗ-2101 (Ульяновск) Шанс+</a>
+                        <div class="product__brand">Шанс+</div>
+                        <div class="product__art">2101-1106010</div>
+                        <div class="product__avail">нет</div>
+                        <div class="product__price">410 р.</div>
+                        <div class="product__controls">
+                            <div class="quantity-counter">
+                                <a class="quantity-counter__minus"></a>
+                                <div class="quantity-counter__input">
+                                    <input type="text" value="1" rel="1">
+                                </div>
+                                <a class="quantity-counter__plus"></a>
+                            </div>
+                            <a href="#" class="btn btn_buy"></a>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="cta-stripe">
+
+                <div class="container">
+                    <div class="cta-stripe__problem cta-stripe__problem_choice">
+                        Не можете определиться <br/>с выбором?
+                    </div>
+                    <div class="cta-stripe__problem cta-stripe__problem_fit">
+                        Не уверены, что деталь <br/>подойдет?
+                    </div>
+                    <a href="#" class="btn btn_outline-white callback-link">Задайте вопрос менеджеру!</a>
+                </div>
+
+
+            </div>
+
+                        
+        </main>
+        <!-- PAGE CONTENT END --> 
+        
+
+
+
+
+        <!-- FOOTER BEGIN -->
+        <footer class="page-footer">
+            <div class="container">
+                <a href="#" class="logo animated"></a>
+
+                <div class="contacts">
+                    <div class="location">
+                        Барнаул
+                    </div>
+                    <div class="phone">
+                        <span class="phone__city-code">+7(3852)</span> 46-47-00<br/>46-47-00<br/>46-47-00
+                    </div>
+                </div>
+            </div>
+            <div class="made-by text-center">
+                Разработка сайта - <a class="e1media-link" href="http://e1media.ru/">e1media</a>
+            </div>
+            
+        </footer>
+        <!-- FOOTER END -->
+
+
+
+
+
+
+        <!-- MOBILE SLIDE-IN MENU BEGIN-->
+        <div class="menu">
+            
+        </div>
+        <div class="overlay js-overlay"></div>
+        <!-- MOBILE SLIDE-IN MENU END-->
+
+
+
+
+
+        <!-- "PRODUCT" MODAL BEGIN -->
+        <div class="product-detail" style="display: none;">
+            <span class="product-detail__close"></span>
+            <div class="spinner"></div>
+                <h2>
+                    Бензонасос ВАЗ-2101 (Ульяновск) Шанс+
+                </h2>
+
+                <div class="flex-row">
+                    <div class="col-6">
+                        <div class="product-detail__img" style="background-image: url(/img/bg/bg-category.jpg);"></div>
+                    </div>
+                    <div class="col-6">
+
+                        <div class="product-detail__price">655 р.</div>
+
+                        <div class="product-detail__controls">
+                            
+                                <div class="quantity-counter">
+                                    <a class="quantity-counter__minus"></a>
+                                    <div class="quantity-counter__input">
+                                        <input type="text" value="1" rel="1">
+                                    </div>
+                                    <a class="quantity-counter__plus"></a>
+                                </div>
+                                <a href="#" class="btn btn_buy"></a> 
+                                <a href="#" class="btn btn_one-click">Заказать в 1 клик</a>                        
+                            
+                            
+
+                        </div>        
+
+
+                        <p>Наличие: 2шт.</p>
+                        <p>Бренд: BOSCH</p>
+                        <p>Артикул: 24-1106010</p>
+
+                    </div>
+                </div>
+                <div class="cta-stripe">
+
+                    <div class="container">
+                        <div class="cta-stripe__problem cta-stripe__problem_choice">
+                            Не можете определиться <br/>с выбором?
+                        </div>
+                        <div class="cta-stripe__problem cta-stripe__problem_fit">
+                            Не уверены, что деталь <br/>подойдет?
+                        </div>
+                        <a href="#" class="btn btn_outline-white callback-link">Задайте вопрос менеджеру!</a>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- PRODUCT WINDOW END -->
+
+
+            
+
+
+        <!-- MODAL WINDOW BEGIN -->
+        <div class="modal" id="callback-window" style="display: none;">
+            <a class="modal-close" href="#">
+            </a>
+            <div class="spinner">
+            </div>
+            <div class="modal-content">
+                <h2>
+                    Позвоним в течение 10 минут
+                </h2>
+                <div class="">
+                    <form action="" data-file="callback" method="post">
+                        <input autofocus="" name="name" placeholder="Ваше имя *" type="text">
+                            <input name="phone" placeholder="Номер телефона *" type="text">
+                                <textarea name="text" placeholder="Здесь вы можете оставить комментарий">
+                                </textarea>
+                                <div class="modal-controls">
+                                    <button class="btn btn_gradient btn_x-small" type="submit">
+                                        Отправить
+                                    </button>
+                                </div>
+                                <div class="modal-errors">
+                                </div>
+                                <div class="modal-result">
+                                </div>
+                            </input>
+                        </input>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-content-copy">
+            </div>
+        </div>
+        <!-- MODAL WINDOW END -->
+
+
+
+
+        
+        <!-- SCROLL-TO-TOP BEGIN -->
+        <div class="to-top js-scroll-to-top">
+            <span class="to-top__text">Наверх</span>
+        </div>
+        <!-- SCROLL-TO-TOP END -->
+        
+          
+
+
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="/js/modernizr.custom.62035.js" type="text/javascript"></script>
+        <script src="/js/swiper.min.js"></script>
+        <script src="/js/wow.min.js"></script>
+        <!-- <script src="/js/jquery.nice-select.min.js"></script> -->
+        <script src="/js/script.js"></script>
+
+
+    </body>
+</html>

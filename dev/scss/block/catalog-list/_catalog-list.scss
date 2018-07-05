@@ -8,5 +8,12 @@
 		a:last-child {
 			margin-bottom: 0;
 		}
+
+		.catalog-link:first-child {
+			padding-top: 0;
+		}
+		.catalog-link:last-child {
+			padding-bottom: 0;
+		}
 	}
 }

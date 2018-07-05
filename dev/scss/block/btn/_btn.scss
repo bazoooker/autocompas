@@ -15,7 +15,7 @@
 	&:visited {
 		color: #fff;
 	}
-		transition: 300ms;
+		transition: $tr;
 	// }
 
 	&.btn_size-s {
@@ -64,6 +64,37 @@
 input.btn {
 	border: 0;
 	outline: none;
+}
+
+.btn_buy {
+    background-image: url(/img/icons/cart-glyph.png);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 1px solid #1837a5;
+    height: 28px;
+    flex: 0 0 35px;
+    padding: 0;
+
+    &:hover {
+    	border: 1px solid $color_main-b;
+    	background-color: #fff;
+    	background-image: url(/img/icons/cart-glyph_blue.png);
+    }
+}
+
+.btn_one-click {
+	@include flex-row(nowrap, flex-start, center);
+	background-color: $color_main-r;
+	height: 2.8rem;
+
+	padding: 0 2.5rem 0 5rem;
+	background-image: url(/img/icons/click.png);
+	background-size: 2.3rem;
+	background-repeat: no-repeat;
+	background-position: 15px 50%;
+
+	font-weight: 400;
 }
 
 

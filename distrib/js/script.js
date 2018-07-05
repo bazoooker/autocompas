@@ -221,7 +221,7 @@ $(document).ready(function(){
 $(document).ready(function(){        
     $(".callback-link").on('click', function(){
         var btn = $(this);                        
-        $("#overlay").fadeIn(100, function(){
+        $(".overlay").fadeIn(100, function(){
             $($(btn).data('window')).show();                        
         }); 
        $('#callback-window').show();
@@ -229,7 +229,7 @@ $(document).ready(function(){
     });
     
     $("#overlay, .modal .modal-close").on('click', function(){
-        $("#overlay, .modal").fadeOut();
+        $(".overlay, .modal").fadeOut();
     $('.modal').find('input, textarea').val('');
         return false;
     });    
@@ -241,6 +241,20 @@ $(document).ready(function(){
 
     });
 });
+
+$(document).ready(function(){        
+    $(".js-product-modal").on('click', function(){
+        var btn = $(this);                        
+        $(".overlay").fadeIn(100, function(){
+        }); 
+       $('.product-detail').show();
+    });
+    
+    $(".overlay, .product-detail .product-detail__close").on('click', function(){
+        $(".overlay, .product-detail, #callback-window").fadeOut();
+    });   
+});
+
 /* МОДАЛЬНЫЕ ОКНА END */
 
 // отправка колбека
@@ -628,34 +642,33 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() { 
+// $(document).ready(function() { 
 
-    $(window).on('resize scroll', function() {
-        if ( $('.counter').visible() ) {
-           $('.counter').addClass('wow'); 
-           $('.counter').each(function() { 
-                var $this = $(this), 
-                countTo = $this.attr('data-count-to'); 
+//     $(window).on('resize scroll', function() {
+//         if ( $('.counter').visible() ) {
+//            $('.counter').addClass('wow'); 
+//            $('.counter').each(function() { 
+//                 var $this = $(this), 
+//                 countTo = $this.attr('data-count-to'); 
 
-                $({ countNum: $this.text()}).animate({ 
-                countNum: countTo 
-                }, 
+//                 $({ countNum: $this.text()}).animate({ 
+//                 countNum: countTo 
+//                 }, 
 
-                { 
-                    duration: 2000, 
-                    easing:'swing', 
-                        step: function() { 
-                        $this.text(Math.floor(this.countNum)); 
-                        }, 
-                    complete: function() { 
-                        $this.text(this.countNum); 
-                        //alert('finished'); 
-                    } 
-                });
-            });
-        }
-    });
-});
+//                 { 
+//                     duration: 2000, 
+//                     easing:'swing', 
+//                         step: function() { 
+//                         $this.text(Math.floor(this.countNum)); 
+//                         }, 
+//                     complete: function() { 
+//                         $this.text(this.countNum); 
+//                     } 
+//                 });
+//             });
+//         }
+//     });
+// });
 
 
 

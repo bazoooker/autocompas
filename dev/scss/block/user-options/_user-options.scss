@@ -9,6 +9,14 @@
 		text-decoration: none;
 		cursor: pointer;
 
+		&:hover {
+			color: $color_main-b;
+		}
+
+		&:hover:before {
+			transform: translateY(-0.9rem) translateX(3px);
+		}
+
 		&:last-child {
 			margin-right: 0;
 		}
@@ -23,6 +31,8 @@
 			background-size: 17px;
 			background-repeat: no-repeat;
 			background-position: 50% 50%;
+
+			transition: $tr;
 		}
 	}
 }

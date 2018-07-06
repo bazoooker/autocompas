@@ -2,15 +2,17 @@
 	display: flex;
     flex-flow: row nowrap;
     height: 3rem;
-    border: 1px solid gainsboro;
+    // border: 1px solid gainsboro;
     border-radius: 4px;
     margin-right: 1rem;
-    max-width: 18rem;
+    max-width: 14rem;
+    background-color: #fff;
 }
 .quantity-counter__minus {
 	position: relative;
 	flex: 0 0 3rem;
 	cursor: pointer;
+	border-radius: 4px;
 	transition: $tr;
 	background-color: #fff;
 
@@ -33,6 +35,7 @@
 	position: relative;
 	flex: 0 0 30px;
 	cursor: pointer;
+	border-radius: 4px;
 	transition: $tr;
 	background-color: #fff;
 

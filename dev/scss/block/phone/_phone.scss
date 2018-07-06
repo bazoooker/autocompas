@@ -5,6 +5,7 @@
 	font-weight: 600;
 	padding: 0 2rem 0 0;
 	cursor: pointer;
+	text-decoration: none;
 
 	&:after {
 		@include pseudo;
@@ -22,4 +23,12 @@
 	font-size: 1.4rem;
 	font-weight: 400;
 	color: #8f8f8f;
+}
+
+.page-footer {
+	.phone {
+		&:after {
+			display: none;
+		}
+	}
 }

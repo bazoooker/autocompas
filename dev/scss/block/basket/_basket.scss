@@ -13,6 +13,11 @@
 		.basket__price {
 			color: $color_main-r;
 		}
+
+		&:before {
+			transform: translateY(-50%) scale(1.3);
+			
+		}
 	}
 
 	&:before {

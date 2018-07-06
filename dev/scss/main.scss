@@ -1,6 +1,7 @@
 // sass features
 @import "assets/stylesheets/var";
 @import "assets/stylesheets/mixin";
+@import "assets/stylesheets/animations";
 
 // normalize
 @import "base/normalize";
@@ -81,6 +82,10 @@
 
 
 @import "block/breadcrumbs/breadcrumbs";
+
+// nice select
+@import "block/brand-select/brand-select";
+@import "nice-select/nice-select-prefixed";
 
 // tabs
 // @import "block/tabs/section-tabs";

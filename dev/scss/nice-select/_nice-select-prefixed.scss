@@ -19,18 +19,18 @@ $arrow_color: $gray !default;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-color: #fff;
   border-radius: 0;
-  border: solid 1px #d0ece6; 
+  // border: solid 1px #d0ece6; 
   box-sizing: border-box;
   clear: both;
   cursor: pointer;
   display: block;
   // float: left;
-  // width: 185px;
-  flex: 0 0 175px;
+  width: 175px;
+  // flex: 0 0 175px;
   font-family: inherit;
   font-size: $font_size;
   font-weight: normal;
-  height: $input_height;
+  // height: $input_height;
   line-height: $input_height - 2;
   outline: none;
   padding-left: $dropdown_padding;
@@ -54,8 +54,8 @@ $arrow_color: $gray !default;
   }
   // Arrow
   &:after { 
-    border-bottom: 2px solid #28aa8c;
-    border-right: 2px solid #28aa8c;
+    border-bottom: 2px solid $color_main-b;
+    border-right: 2px solid $color_main-b;
     content: '';
     display: block; 
     height: 5px;
@@ -105,9 +105,10 @@ $arrow_color: $gray !default;
   }
   .current {
     display: block;
-    width: 15rem;
+    /* width: 15rem; */
     overflow: hidden;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 3.1rem;
   }
   
   // Modifiers
@@ -168,7 +169,7 @@ $arrow_color: $gray !default;
   }
   .option {
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 300;
     line-height: $input_height - 2;
     list-style: none;
     min-height: $input_height - 2;
@@ -176,11 +177,12 @@ $arrow_color: $gray !default;
     padding-left: $dropdown_padding;
     padding-right: $dropdown_padding + 11;
     text-align: left;
+    font-size: 1.4rem;
     -webkit-transition  
 : all 0.2s;
     transition: all 0.2s;
     &:hover, &.focus, &.selected.focus { 
-      background-color: #d0ece6;
+      background-color: #f1f1f1;
     }
     &.selected { 
       font-weight: bold;

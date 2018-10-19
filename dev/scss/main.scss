@@ -7,11 +7,12 @@
 @import "base/normalize";
 
 // fonts
-@import "base/fonts";
+// @import "base/fonts";
 @import "base/typography";
 
 // page template
 @import "block/page-template/page-header";
+@import "block/sticky-header/sticky-header";
 @import "block/page-template/page-footer";
 @import "block/page-template/page-wrapper";
 @import "block/page-template/page-content";
@@ -21,6 +22,7 @@
 @import "block/inner-page/inner-page";
 
 @import "block/grid/grid";
+@import "block/tile/tile";
 
 @import "block/nav/nav";
 @import "block/user-options/user-options";
@@ -92,8 +94,10 @@
 
 
 // menu
+@import "block/menu/menu";
 
 // navigation
+@import "block/pagination/pagination";
 
 // modal
 @import "block/modal/overlay";

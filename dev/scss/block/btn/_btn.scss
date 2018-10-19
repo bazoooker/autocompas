@@ -1,4 +1,5 @@
-.btn {
+.btn,
+button.btn {
 	display: inline-block;
 	position: relative;	
 	overflow: hidden;
@@ -24,11 +25,14 @@
 	}
 
 	&:hover {
-		background-color: $color_main-b;
+		background-color: darken($color_main-b, 8%);
+		color: #fff;
 	}
 }
 
-.btn_outline {
+.btn_outline,
+button.btn_outline {
+	display: inline-block;
 	background-color: transparent;
 	border: 1px solid gray;
 	color: gray;

@@ -10,6 +10,7 @@
 	    /* overflow: hidden; */
 	    padding: 0 0 0 20px;
 	    border: none;
+        color: #333;
     }
 
     input[type=submit] {
@@ -27,6 +28,7 @@
     	background-position: 50% 50%;
     	background-color: #fff;
     	cursor: pointer;
+        color: #333;
 
     	transition: $tr;
 

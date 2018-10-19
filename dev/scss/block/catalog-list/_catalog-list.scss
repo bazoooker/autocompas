@@ -17,3 +17,37 @@
 		}
 	}
 }
+
+.catalog-list_dropdown-menu { 
+	position: absolute;
+    width: 100%;
+
+    top: 55px;
+
+    background-color: #fff;
+    box-shadow: 0 0 35px 1px rgba(0,0,0,.2);
+    background-image: none;
+
+    z-index: 9;
+    overflow: hidden;
+
+    transition: 220ms;
+
+    // changable
+    opacity: 0;
+	height: 0;
+    transform: translateY(30px);
+
+	.container {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+}
+
+.catalog-list_active {
+    // changable
+	height: auto;
+    transform: translateY(0);
+    opacity: 1;
+}

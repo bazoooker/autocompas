@@ -1,11 +1,12 @@
 .quantity-counter {
 	display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
     height: 3rem;
     // border: 1px solid gainsboro;
     border-radius: 4px;
     margin-right: 1rem;
-    max-width: 14rem;
+    width: 14rem;
     background-color: #fff;
 }
 .quantity-counter__minus {
@@ -66,6 +67,8 @@
 }
 .quantity-counter__input {
     height: 100%;
+    flex: 0 0 4rem;
+    max-width: 4rem;
 	input {
 	    width: 100%;
 	    text-align: center;

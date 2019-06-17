@@ -1,0 +1,7 @@
+node_modules
+*.psd
+design
+client
+distrib/css/main.css
+distrib/css/sftp-config.json
+distrib/css/*.json

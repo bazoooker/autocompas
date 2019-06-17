@@ -1,0 +1,63 @@
+.cabinet-item {
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal;
+  color: #333333;
+  text-decoration: none;
+  background-color: #efefef;
+  border-radius: 8px;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  text-align: center; }
+  .cabinet-item a {
+    text-decoration: none;
+    display: block;
+    color: #01369e;
+    padding: 3rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms; }
+    .cabinet-item a .fa {
+      margin: 0 0 1rem 0;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 3.5rem;
+      color: gray;
+      -webkit-transition: 300ms;
+      -o-transition: 300ms;
+      transition: 300ms; }
+  .cabinet-item:hover {
+    background-color: #01369e; }
+    .cabinet-item:hover a {
+      color: #fff; }
+      .cabinet-item:hover a .fa {
+        color: #fff;
+        -webkit-transform: translateY(-8px);
+        -ms-transform: translateY(-8px);
+        transform: translateY(-8px); }
+
+font.errortext {
+  color: #fff;
+  padding: 8px 30px;
+  display: inline-block;
+  background-color: #ff9191;
+  border-radius: 8px;
+  -webkit-transition: 800ms;
+  -o-transition: 800ms;
+  transition: 800ms;
+  font-size: 1.4rem; }

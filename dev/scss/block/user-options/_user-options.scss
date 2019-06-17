@@ -8,14 +8,21 @@
 		padding: 1.2rem 0 1.2rem 3rem;
 		text-decoration: none;
 		cursor: pointer;
+		opacity: .75;
+		transition: 200ms;
+
+		span {
+			font-size: 1.4rem;
+		}
 
 		&:hover {
 			color: $color_main-b;
+			opacity: 1;
 		}
 
-		&:hover:before {
-			transform: translateY(-0.9rem) translateX(3px);
-		}
+		// &:hover:before {
+		// 	transform: translateY(-0.9rem) translateX(3px);
+		// }
 
 		&:last-child {
 			margin-right: 0;
@@ -35,11 +42,39 @@
 			transition: $tr;
 		}
 	}
+
+	.user-options__callback {
+	    padding: 1.2rem 2rem 1.2rem 4rem;
+	    border-left: 1px solid lightgray;
+	    border-right: 1px solid lightgray;
+	    &::before {
+			background-image: url(/img/icons/phone.png);
+			left: 1.2rem;
+	    }
+	    &:hover {
+	    	background-color: #e0e0e0;
+	    }
+	}
 }
+
+
+
+
 
 .user-options__cabinet:before {
 	background-image: url(/img/icons/cabinet.png);
 }
-.user-options__callback:before {
-	background-image: url(/img/icons/phone.png);
+.user-options__sign-up::before {
+	background-image: url(/img/icons/sign-up.png);
+}
+.user-options__sign-in::before {
+	background-image: url(/img/icons/lock.png);
+}
+
+
+@media screen and (max-width: 567px) {
+	.user-options__cabinet {display: none;}
+	.user-options__callback {
+		border-right: 0 !important;
+	}
 }

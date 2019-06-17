@@ -13,21 +13,52 @@
 }
 
 .product-list__name {
-	flex: 0 1 50%;
+	flex: 0 1 47%;
 }
 .product-list__brand {
 	flex: 0 1 15%;
 }
 .product-list__art {
-	flex: 0 1 25%;
+	flex: 0 1 23%;
 }
 .product-list__avail {
-	flex: 0 1 10%;
+	flex: 0 1 12%;
 }
 .product-list__price {
 	flex: 0 1 10%;
 }
 .product-list__controls {
-	flex: 0 0 12%;
+	flex: 0 0 14%;
 	min-width: 12.6rem;
+}
+.product-list__name,
+.product-list__brand,
+.product-list__art,
+.product-list__avail,
+.product-list__price,
+.product-list__controls {
+	padding: 0 1rem;
+}
+
+@media screen and (max-width: 1023px) {
+	.product-list__heading {
+		@include flex-row(wrap, flex-start, center);
+	}
+	.product-list__name {
+		flex: 1 1 40%;
+		max-width: 40%;
+	}
+	.product-list__art,
+	.product-list__brand,
+	.product-list__avail  {
+		flex: 1 1 20%;
+		max-width: 20%;
+	}
+	.product-list__price,.product-list__controls {display: none;}
+}
+
+@media screen and (max-width: 767px) {
+	.product-list__header {
+		display: none;
+	}
 }

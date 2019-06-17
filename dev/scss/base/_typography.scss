@@ -1,30 +1,31 @@
 html {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     font-weight: 400;
     color: #5e5e5e;
 }
 body {
     font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif !important;
 }
 h1 {
     font-size: 3.1rem;
     line-height: 100%;
     font-weight: 300;
     color: $color_main-b;
-    margin: 0 0 $gutter 0;
+    margin: $gutter 0 $gutter 0;
 }
 h2 {
     font-size: 3rem;
     font-weight: 300;
     color: $color_main-b;
-    margin: 0 0 $gutter 0;
+    margin: $gutter 0 $gutter 0;
 }
 h3 {
     font-size: 2.2rem;
     color: $color_main-b;
     font-weight: 600;
-    margin: 0 0 $gutter 0;
+    margin: $gutter 0 $gutter 0;
 }
     
 section {
@@ -40,7 +41,7 @@ p, span, ul, li, button {
 }
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     &:empty {
         display: none;
     }
@@ -63,25 +64,25 @@ a {
 table {
     width: 100%;
 }
-table tr {
-    font-size: 1.8rem;
-    line-height: 2.5rem;
-    position: relative;
-    ovarflow: hidden;
-    td {
-        padding: .7rem 1.5rem;
-    }
-    &:nth-child(odd) {
-        td {
-            background-color: #fff;
-        }
-    }
-    &:nth-child(even) {
-        td {
-            background-color: #e3f2ff;
-        }
-    }
-}
+// table tr {
+//     font-size: 1.8rem;
+//     line-height: 2.5rem;
+//     position: relative;
+//     ovarflow: hidden;
+//     td {
+//         padding: .7rem 1.5rem;
+//     }
+//     &:nth-child(odd) {
+//         td {
+//             background-color: #fff;
+//         }
+//     }
+//     &:nth-child(even) {
+//         td {
+//             background-color: #e3f2ff;
+//         }
+//     }
+// }
 
 ul {
     padding-left: 1.3rem;
@@ -94,7 +95,30 @@ ul {
     }
 }
 
+.form-table.user-table {
+    background-color: #f3f2f2;
+    border-radius: 10px;
 
+    button, input, optgroup, select, textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+        padding: 8px;
+        border-radius: 5px;
+        outline: none;
+        border: 0;
+        border: 1px solid #e0e0e0;
+        
+        &:focus {
+                border: 1px solid lightgray;
+        }
+    }
+}
+.user-table-note.field-note {
+    display: inline-block;
+    margin: .8rem;
+}
 .made-by {
     color: #fff;
     font-size: 1.2rem;
@@ -166,6 +190,9 @@ ul {
             padding: .7rem 1rem;
         }
     }
+    .form-table.user-table {
+        padding: 20px;
+    }
 }
 @media screen and (max-width: 569px) {
     h1 {
@@ -186,5 +213,10 @@ ul {
         td {
             padding: .5rem .5rem;
         }
+    }
+}
+@media screen and (max-width: 413px) {
+    .form-table.user-table {
+        padding: 13px;
     }
 }

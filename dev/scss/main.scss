@@ -7,11 +7,12 @@
 @import "base/normalize";
 
 // fonts
-@import "base/fonts";
+// @import "base/fonts";
 @import "base/typography";
 
 // page template
 @import "block/page-template/page-header";
+@import "block/sticky-header/sticky-header";
 @import "block/page-template/page-footer";
 @import "block/page-template/page-wrapper";
 @import "block/page-template/page-content";
@@ -21,6 +22,7 @@
 @import "block/inner-page/inner-page";
 
 @import "block/grid/grid";
+@import "block/tile/tile";
 
 @import "block/nav/nav";
 @import "block/user-options/user-options";
@@ -78,6 +80,9 @@
 // product-detail
 @import "block/product-detail/product-detail";
 
+// register
+@import "block/register-table/register-table";
+
 
 
 
@@ -92,8 +97,13 @@
 
 
 // menu
+@import "block/menu/menu";
+
+// all bitrix stuff
+@import "block/bitrix/bitrix";
 
 // navigation
+@import "block/pagination/pagination";
 
 // modal
 @import "block/modal/overlay";
@@ -104,7 +114,7 @@
 // well
 // @import "block/well";
 // @import "block/ref";
-// @import "block/lead";
+@import "block/lead/lead";
 
 // animate lib
 // @import "block/animate/animate";

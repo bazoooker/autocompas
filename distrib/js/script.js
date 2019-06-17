@@ -1,6 +1,185 @@
- $(document).ready(function() {
-  $('select').niceSelect();
+$(document).ready(function(){
+/*
+    $( ".zoompage .btn_add-to-cart, .zoompage .product-detail .btn_add-to-cart" ).bind( "click", function(){
+        var id=$(this).attr('id');
+        var count=1;
+        var cart_id=parseInt($("input[name=QUANTITY_PRODUCT_"+id+"]").attr('ids'));
+        var input=parseInt($("input[name=QUANTITY_PRODUCT_"+id+"]").val());
+
+        if (input>0) {
+            count=input;
+        }
+            $.ajax({
+                type: 'POST',
+                url: '/include/addCart.php?id='+id+'&count='+count,
+                data: 'id='+id,
+                success: function(data){                         
+                  $('.basket__inner').empty();
+                  $('.basket__inner').append(data);
+                  $('#basket-added-window').show();
+                     $(".overlay").fadeIn(100, function(){});
+                }
+            });
+        return false;
+
+    });
+*/
+
+})
+
+// ресайз саджест поиска
+function resizesuggest() {
+	$('.title-search-result').width($('#title-search').width());
+	p=$('#title-search').offset();
+//	console.log(p);
+	$('.title-search-result').css('left',p.left);
+	$('.title-search-result').css('top',p.top+20);
+}
+
+$(document).ready(function(){
+	setTimeout("resizesuggest()",200);
 });
+
+// прилипающий хедер
+function showStickyHeader() {
+    if ( window.pageYOffset > 200 ) {
+       $('.sticky-header').fadeIn(200);
+    }
+    else {
+        $('.sticky-header').fadeOut(200);
+    }
+};
+
+
+$('.page-header .phone').mouseenter(function() {
+  if ($(window).width() >= 768) {
+    $('.phone__accordeon').show();
+  }
+});
+$('.page-header .phone').mouseleave(function() {
+  if ($(window).width() >= 768) {
+    $('.phone__accordeon').hide();
+  }
+});
+
+$('.page-header .phone').click(function() {
+  if ($(window).width() < 768) {
+    $('.phone__accordeon').toggleClass('active');
+  }
+});
+
+
+
+
+
+
+$(document).ready(function() {
+  $('.brand-select select').niceSelect();
+});
+
+
+
+
+// главное меню дропдаун
+$(document).ready(function(){
+    $('.js-show-main-dropdown-menu, .catalog-list_dropdown-menu').hover(function() {
+        var dropdownIsClosed = ( !$('.catalog-list_dropdown-menu').hasClass('catalog-list_active') );    
+        if(dropdownIsClosed) {
+            $('.catalog-list_dropdown-menu').addClass('catalog-list_active');
+            $('.js-show-main-dropdown-menu').addClass('btn-burger_active');
+        } else {
+            $('.catalog-list_dropdown-menu').removeClass('catalog-list_active');
+            $('.js-show-main-dropdown-menu').removeClass('btn-burger_active');
+        }
+    });
+});
+
+
+
+
+
+
+
+
+$(window).scroll(showStickyHeader);
+ 
+
+
+
+
+
+
+
+ // считалка
+     function Quantity(id, ratio, sign, bUseFloatQuantity)
+{ 
+     var input=parseInt($("input[name=QUANTITY_PRODUCT_"+id+"]").val());
+     var sum=0;
+     if (sign=='up') {
+         sum=input+ratio;
+     }else{
+         sum=input-ratio;
+        if (sum<=0) {
+            sum=1;
+        }
+     }
+     $("input[name=QUANTITY_PRODUCT_"+id+"]").val(sum);
+}
+
+
+
+    // корзина и добовляка
+    $(".btn_add-to-cart, .product-detail .btn_add-to-cart").click( function (e) {
+        e.preventDefault();
+        var id=$(this).attr('id');
+        var count=1;
+    var cart_id=parseInt($("input[name=QUANTITY_PRODUCT_"+id+"]").attr('ids'));
+      var input=parseInt($("input[name=QUANTITY_PRODUCT_"+id+"]").val());
+        if (input>0) {
+            count=input;
+        }
+        if (cart_id>0) {
+
+          $.ajax({
+      type: 'POST',
+      url: '/updateCart.php?id='+cart_id+'&qty='+count,
+      data: '',
+      success: function(data){                         
+          $('.basket__inner').empty();
+            $('.basket__inner').append(data);
+            $('#basket-added-window').show();
+            $(".overlay").fadeIn(100, function(){}); //overlay_
+         }
+    });
+
+        }else{
+    
+            $.ajax({
+                type: 'POST',
+                url: '/include/addCart.php?id='+id+'&count='+count,
+                data: 'id='+id,
+                success: function(data){                         
+                    $('.basket__inner').empty();
+                    $('.basket__inner').append(data);
+                    $('#basket-added-window').show();
+                    //$('#overlay').show();
+                    $(".overlay").fadeIn(100, function(){}); 
+        
+                    setTimeout(function(){
+                      $('.modal-close').click();
+                    },3000)
+                                  
+                }
+            });
+    }
+
+    });
+ // 
+ // end
+
+
+
+
 
 //новости с ленивой загрузкой
 
@@ -47,26 +226,27 @@ $(document).ready(function(){
 });
 
 
-// инпуты как любит белокуриха
-$(document).ready(function(){
-	$('.formgroup input,.formgroup textarea').blur();
 
-	$('.formgroup label').click(function(){
-		$(this).parent().find('input, textarea').focus();
-		$(this).addClass("up");
-	});
 
-	$('.formgroup input,.formgroup textarea').blur(function(){
-		if($(this).val()!=""){} else {
-			$(this).parent().find("label").removeClass("up");
-		};
-	});
-	$('.formgroup input,.formgroup textarea').focus(function(){
-		if($(this).val()!=""){} else {
-			$(this).parent().find("label").addClass("up");
-		};
-	});
-});
+// $(document).ready(function(){
+// 	$('.formgroup input,.formgroup textarea').blur();
+
+// 	$('.formgroup label').click(function(){
+// 		$(this).parent().find('input, textarea').focus();
+// 		$(this).addClass("up");
+// 	});
+
+// 	$('.formgroup input,.formgroup textarea').blur(function(){
+// 		if($(this).val()!=""){} else {
+// 			$(this).parent().find("label").removeClass("up");
+// 		};
+// 	});
+// 	$('.formgroup input,.formgroup textarea').focus(function(){
+// 		if($(this).val()!=""){} else {
+// 			$(this).parent().find("label").addClass("up");
+// 		};
+// 	});
+// });
 
 
 $(document).ready(function(){ 
@@ -80,6 +260,20 @@ $(document).ready(function(){
       slidesPerView: 4,
       spaceBetween: 19,
       // loop: true,
+       breakpoints: {
+            1250: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            1023: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            667: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            }
+        }
     });
 
     var swiperBrands = new Swiper('.swiper-container-brands', {
@@ -87,8 +281,54 @@ $(document).ready(function(){
         nextEl: '.brands-slider-btn-next',
         prevEl: '.brands-slider-btn-prev',
       },
-      slidesPerView: 7,
+      slidesPerView: 6,
+       loop: true,
+  autoplay: {
+    delay: 3000,
+  },	
+
+      breakpoints: {
+            1250: {
+              slidesPerView: 5,
+              spaceBetween: 30
+            },
+            1023: {
+              slidesPerView: 4,
+              spaceBetween: 30
+            },
+            667: {
+              slidesPerView: 3,
+              spaceBetween: 20
+            },
+            413: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            }
+        }
+    });
+
+    var swiperNews = new Swiper('.swiper-container-news', {
+      navigation: {
+        nextEl: '.news-slider-btn-next',
+        prevEl: '.news-slider-btn-prev',
+      },
+      slidesPerView: 4,
+      spaceBetween: 19,
       // loop: true,
+       breakpoints: {
+            1250: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            },
+            1023: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            667: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            }
+        }
     });
 
     // slider on object page
@@ -96,20 +336,21 @@ $(document).ready(function(){
 
     // slide on thumbnails
 
-    // первая миниатюра станет активной
-    $('.js-object-slide').first().addClass('hero-object-thumbnail_active');
 
-    $('.js-object-slide').click(function() {
-        var thumbIndex = $(this).index(),
-            curThumb = $('.hero-object-thumbnail').get(thumbIndex);
 
-        // при клике на данную миниатюру делаем ее активной
-        $('.hero-object-thumbnail').removeClass('hero-object-thumbnail_active');
-        $(curThumb).addClass('hero-object-thumbnail_active');
+    // $('.js-object-slide').first().addClass('hero-object-thumbnail_active');
 
-    // при клике на данную миниатюру листаем свайпер
-        swiperObjects.slideTo(thumbIndex, 300);
-    });
+    // $('.js-object-slide').click(function() {
+    //     var thumbIndex = $(this).index(),
+    //         curThumb = $('.hero-object-thumbnail').get(thumbIndex);
+
+    //     $('.hero-object-thumbnail').removeClass('hero-object-thumbnail_active');
+    //     $(curThumb).addClass('hero-object-thumbnail_active');
+
+    //     swiperObjects.slideTo(thumbIndex, 300);
+    // });
+
+
 
     // slider on main screen
     var swiperHero = new Swiper('.swiper-container-hero', {
@@ -143,96 +384,50 @@ $(document).ready(function(){
         }
     });
 
-    var swiperDiplomas = new Swiper('.swiper-container-diplomas', {
-        // autoplay: {
-        //     delay: 3000,
-        // },
-        slidesPerView: 3,
-        spaceBetween: 30,
-        navigation: {
-            nextEl: '.swiper-button-next.diplomas',
-            prevEl: '.swiper-button-prev.diplomas',
-          },
-          breakpoints: {
-            569: {
-              slidesPerView: 1,
-              spaceBetween: 20
-            },
-            960: {
-              slidesPerView: 2,
-              spaceBetween: 30
-            }
-          }
-    });
 
-    var swiperLicenz = new Swiper('.swiper-container-licenz', {
-        // autoplay: {
-        //     delay: 3000,
-        // },
-        slidesPerView: 3,
-        spaceBetween: 30,
-        navigation: {
-            nextEl: '.swiper-button-next.licenz',
-            prevEl: '.swiper-button-prev.licenz',
-          },
-          breakpoints: {
-            569: {
-              slidesPerView: 1,
-              spaceBetween: 20
-            },
-            960: {
-              slidesPerView: 2,
-              spaceBetween: 30
-            }
-          }
-    });
 
-    var slide_number;
-    var timerId = setInterval(function() {
-        if (slide_number!=swiperHero.activeIndex) {
-             wows = new WOW(
-      {
-        boxClass:     'wows',      // класс, скрывающий элемент до момента отображения на экране (по умолчанию, wow)
-        animateClass: 'animated', // класс для анимации элемента (по умолчанию, animated)
-        offset:       0,          // расстояние в пикселях от нижнего края браузера до верхней границы элемента, необходимое для начала анимации (по умолчанию, 0)
-        mobile:       true,       // включение/отключение WOW.js на мобильных устройствах (по умолчанию, включено)
-        live:         true,       // поддержка асинхронно загруженных элементов (по умолчанию, включена)
-        callback:     function(box) {
-          // функция срабатывает каждый раз при старте анимации
-          // аргумент box — элемент, для которого была запущена анимация
-        },
-        scrollContainer: null // селектор прокручивающегося контейнера (опционально, по умолчанию, window)
-      }
-    ).init();
- slide_number=swiperHero.activeIndex;
-}
-}, 500);
-       
-       
-   
-     
 
-    
 
     });
 
 
     /* МОДАЛЬНЫЕ ОКНА */
 $(document).ready(function(){        
+
+    // обратный звонок
     $(".callback-link").on('click', function(){
+
+      if( $('.main-menu').hasClass('main-menu_active') ) {
+        $('.main-menu').removeClass('main-menu_active');
+        $('.overlay-menu').fadeOut(200);
+        $('.page-wrapper').removeClass('h-no-scroll');
+      };
         var btn = $(this);                        
-        $(".overlay").fadeIn(100, function(){
+        $(".overlay-modal").fadeIn(100, function(){
+          $($(btn).data('window')).show();                        
+        }); 
+        $('#callback-window').show();
+          return false;
+    });
+
+    // купить в один клик
+    $(".btn.btn_one-click").on('click', function(){ 
+        var btn = $(this);      
+        $(".overlay-modal").fadeIn(100, function(){
             $($(btn).data('window')).show();                        
         }); 
-       $('#callback-window').show();
-        return false;
+        $('#oneclickorder-window input.reason').val($(this).attr('name'));
+        $('#oneclickorder-window').show();
+          return false;
     });
+
     
-    $("#overlay, .modal .modal-close").on('click', function(){
-        $(".overlay, .modal").fadeOut();
+    $(".modal-close").on('click', function(){
+        $(".overlay, .modal, .product-detail").fadeOut();
     $('.modal').find('input, textarea').val('');
         return false;
     });    
+
     $('.modal').each(function(){
         var f=$(this).find('.modal-content');
         var t=$(this).find('.modal-content-copy');
@@ -242,20 +437,222 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){        
-    $(".js-product-modal").on('click', function(){
+
+
+
+
+// отправка колбека
+$(".modal form").on('submit', function(e){
+        e.preventDefault();
+        var modal = $(this).parents('.modal');
+        var form = $(this);         
+        $(this).ajaxSubmit({  
+            url: "/ajax.php?file="+$(form).data('file'),
+            data: $(form).serialize(),
+            dataType: "JSON",
+            type: "POST",
+            success: function(data){
+                if(data.done) {
+      $(modal).find('.modal-result').html(data.message);
+      $(modal).find('.modal-result').show('fast')
+      setTimeout("$('.modal-result').hide('fast')",1500);
+
+      setTimeout("$('.modal').hide()",2000);
+                  setTimeout("$('#overlay, .overlay').hide()",2000);
+      var f=$(modal).find('.modal-content-copy');
+      var t=$(modal).find('.modal-content');
+                  setTimeout("$('.modal').find('input, textarea').val('')",3000);
+      
+                } else {
+                    $(modal).find('.modal-errors').html(data.message);
+    $(modal).find('.modal-errors').show('fast')
+    setTimeout("$('.modal-errors').hide('fast')",1000);
+                    $(modal).children(".spinner").hide();
+                }
+		      setTimeout("$('.modal').hide()",2000);
+                  setTimeout("$('#overlay').hide()",2000);
+            },
+            complete: function(){
+                $(modal).children(".spinner").hide();                     
+            }
+        });
+        return false;
+    });
+
+
+
+
+
+
+
+
+$(document).ready(function(){  
+
+
+    $(".js-product-modal a.show_tovar").on('click', function(e){
+	e.preventDefault();
+        var btn = $(this);                        
+        $(".overlay").fadeIn(100, function(){}); 
+
+
+        // serega script 
+        // 
+
+
+        var id=$(this).attr('rel');
+        $.ajax({
+                    type: 'POST',
+                    url: '/include/DetailElement.php?id='+id,
+                    data: 'id='+id,
+
+                    success: function(data){                         
+                        $('.product-detail').empty();
+                        $('.product-detail').append(data);
+                        $('.product-detail').show(); 
+                        $( " .product-detail a.quantity-counter__minus" ).unbind( "click" );
+                        $( ".product-detail a.quantity-counter__minus" ).bind( "click", function(){Quantity($(this).attr('rel')+"s",1 , 'down', 1) });   
+                        $( " .product-detail a.quantity-counter__plus" ).unbind( "click" );
+                        $( ".product-detail a.quantity-counter__plus" ).bind( "click", function(){Quantity($(this).attr('rel')+"s",1 , 'up', 1) });   
+                        $(".btn_add-to-cart, .product-detail .btn_add-to-cart").unbind( "click" );
+
+    $( ".btn_add-to-cart, .product-detail .btn_add-to-cart" ).bind( "click", function(){
+        var id=$(this).attr('id');
+        var count=1;
+        var cart_id=parseInt($("input[name=QUANTITY_PRODUCT_"+id+"]").attr('ids'));
+        var input=parseInt($("input[name=QUANTITY_PRODUCT_"+id+"]").val());
+
+        if (input>0) {
+            count=input;
+        }
+
+        if (cart_id>0) {
+          $.ajax({
+            type: 'POST',
+            url: '/updateCart.php?id='+cart_id+'&qty='+count,
+            data: '',
+            success: function(data){                         
+              $('.basket__inner').empty();
+              $('.basket__inner').append(data);
+              $('#basket-added-window').show();
+		$('.product-detail').hide();
+
+              //$('#overlay').show();
+              $(".overlay").fadeIn(100, function(){}); 
+
+            }
+          });
+
+        }else{
+    
+            $.ajax({
+                type: 'POST',
+                url: '/include/addCart.php?id='+id+'&count='+count,
+                data: 'id='+id,
+                success: function(data){                         
+		$('.product-detail').hide();
+                  $('.basket__inner').empty();
+                  $('.basket__inner').append(data);
+                  $('#basket-added-window').show();
+                     $(".overlay").fadeIn(100, function(){});
+                }
+            });
+        };
+        return false;
+
+    });
+
+    /*** чтобы работал модалка Вопрос менеждеру ***/
+
+    $(".callback-link").on('click', function(){
         var btn = $(this);                        
         $(".overlay").fadeIn(100, function(){
+            $($(btn).data('window')).show();                        
         }); 
-       $('.product-detail').show();
+        var str = $.trim($('#nameprod').html());
+        $('#callback-window textarea').val('Вопрос по: ('+str+')');
+
+       $('#callback-window').show();
+       $('.product-detail').hide();
+        return false;
     });
     
-    $(".overlay, .product-detail .product-detail__close").on('click', function(){
-        $(".overlay, .product-detail, #callback-window").fadeOut();
+
+
+
+    //$("#overlay, .modal, .modal-close").on('click', function(){
+    $(".overlay, .modal-close").on('click', function(){
+        $(".overlay, .modal, .product-detail").fadeOut();
+    $('.modal').find('input, textarea').val('');
+        return false;
+    });    
+
+
+    $('.modal').each(function(){
+        var f=$(this).find('.modal-content');
+        var t=$(this).find('.modal-content-copy');
+        t.html(f.html());
+        t.hide();
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*** Отдельно вынесено чтобы работал крестик Просмотр деталей товара ***/
+    $(".product-detail__close").on('click', function(){
+        $(".overlay, .product-detail").fadeOut();
+    });
+    /*****/
+
+
+
+
+    $(".btn.btn_one-click").unbind( "click" );
+    $( ".btn.btn_one-click" ).bind( "click", function(){
+        //alert('zzz');
+        var btn = $(this);                        
+        $(".overlay,#overlay").fadeIn(100, function(){
+            $($(btn).data('window')).show();                        
+        }); 
+
+       $('.product-detail').hide();
+       var str = $.trim($('#nameprod').html());
+    $('#oneclickorder-window input.reason').val(str);
+       $('#oneclickorder-window').show();
+        return false;
+    });
+
+
+
+                      }
+                    });
+});
+
+    
+    $(".overlay, .product-detail__close").on('click', function(){
+        $(".overlay, .product-detail, #callback-window, #basket-added-window").fadeOut();
     });   
 });
 
 /* МОДАЛЬНЫЕ ОКНА END */
+
+
+
+
+
 
 // отправка колбека
 $(".modal form").on('submit', function(e){
@@ -360,7 +757,8 @@ $(".modal form").on('submit', function(e){
 
         $('.section-tabs__content[rel=' + number + '] .slide').each(function(i, elem) {
             content[i] = elem.innerHTML;
-        });            
+        }); 
+
         paint_dom(content, li_name, number);
 
         content = new Array();
@@ -370,13 +768,15 @@ $(".modal form").on('submit', function(e){
 
 
 
-function paint_dom(content, li_name, number, name_home_dom='section-tabs__tabs') {
+function paint_dom(content, li_name, number, name_home_dom) {
+    name_home_dom = name_home_dom == undefined ? 'section-tabs__tabs' : name_home_dom;
+    
     var structur_dom = '<ul class="cd-accordion-menu">';
     for (var i = 0; i < li_name.length; i++) {
-
-        if (content[i] == undefined) {
+        
+        if (content[i] === undefined) {
             content[i] = ' ';
-        }
+        } 
         structur_dom = structur_dom + '<li rel=' + i + ' class="has-children"><label class="group-1">' + li_name[i] + '</label><div style="display:none;" class="slide_children">' + content[i] + '</div></li>';
     }
     structur_dom = structur_dom + '</ul>';
@@ -458,20 +858,6 @@ $(document).ready(function () {
 });
 
 
-
-function showTags() {
-    if( !$('.tagcontainer').hasClass('tagcontainer_opened') ) {
-        $('.tagcontainer').addClass('tagcontainer_opened');
-            $('.js-overlay').show();
-            console.log('1');
-    }
-    else {
-        $('.tagcontainer').removeClass('tagcontainer_opened');
-        $('.js-overlay').hide();
-        console.log('2');
-    }
-};
-
 function moveProgress() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -487,17 +873,15 @@ function moveProgress() {
 //         $('.page-header').addClass('page-header_sticky');
 //     }
 // })
-function showStickyHeader() {
-
-
-    if ( window.pageYOffset > 0 ) {
-       $('.page-header').addClass('page-header_sticky');
-    }
-    else {
-        console.log('less than 700')
-        $('.page-header').removeClass('page-header_sticky');
-    }
-};
+// function showStickyHeader() {
+//     if ( window.pageYOffset > 0 ) {
+//        $('.page-header').addClass('page-header_sticky');
+//     }
+//     else {
+//         console.log('less than 700')
+//         $('.page-header').removeClass('page-header_sticky');
+//     }
+// };
 
 function showToTopButton() {
     // var heroHeight = $('.hero').height();
@@ -524,61 +908,30 @@ function scrollToTop() {
 // =================================
 
 var menuIsOpen; //for closing menu on "esc"
-
-// menu open/close
 function openMenu() {
-    var topMenu = $('.menu');
-    var isSticky = $('.page-header').hasClass('page-header_sticky');
-    var topOffset = $(window).scrollTop(); 
-    var windWidth = $(window).width(); 
-
-    if( topMenu.hasClass('menu_active') ) {
-        topMenu.removeClass('menu_active');
-        $('.page-wrapper').removeClass('h-no-scroll');
-        $('.js-open-menu').removeClass('btn-menu_active');
-        $('.nav-main__links').removeClass('nav-main__links_removed');
-            if ( ( isSticky ) || ( topOffset !== 0 ) || (windWidth <= 667) ){
-                console.log('do nothing');
-                return false;
-            }
-            else {
-                $('.page-header .logo').css('transform', 'translateY(0)');
-                console.log('remove logo');
-            }
-
-        menuIsOpen = false;
-    }
-    else {
-        topMenu.addClass('menu_active');
+    if( !$('.main-menu').hasClass('main-menu_active') ) {
+        $('.main-menu').addClass('main-menu_active');
+        $('.overlay-menu').fadeIn(200);
         $('.page-wrapper').addClass('h-no-scroll');
-        $('.js-open-menu').addClass('btn-menu_active');
-        $('.nav-main__links').addClass('nav-main__links_removed');
-
-            if ( ( isSticky ) || ( topOffset !== 0 ) || (windWidth <= 667) ){
-                console.log('do nothing');
-                return false;
-            }
-            else {
-                $('.page-header .logo').css('transform', 'translateY(-35rem)');
-                console.log('remove logo');
-            }
-
-        // slideMenuList();
-        menuIsOpen = true;
+    }else {
+        $('.main-menu').removeClass('main-menu_active');
+        $('.overlay-menu').fadeOut(200);
+        $('.page-wrapper').removeClass('h-no-scroll');
     }
 }
+
+
+
+
+
+
+
 
 // triggers
 $(document).ready(function() {   
     $('.js-open-menu').click(openMenu);
     $('.js-menu-close').click(openMenu);
-    // $('.menu .nav-full .nav-full__list li a').click(openMenu);
     $('.js-scroll-to-top').click(scrollToTop);
-
-    // tags
-    $('.js-overlay').click(showTags);
-    $('.js-slide-tagcontainer').click(showTags);
-
 
     // $(window).scroll(showStickyHeader);  
     $(window).scroll(showToTopButton);    
@@ -598,164 +951,54 @@ $(document).on( 'keydown', function ( e ) {
 
 // BTN-GROUP
 
-// показать карту
-function showMap() {
-    var isActive = $('.showtype').hasClass('showtype_active-map');
-    var btnGroup = $('.showtype');
+// function showMap() {
+//     var isActive = $('.showtype').hasClass('showtype_active-map');
+//     var btnGroup = $('.showtype');
 
-    if (isActive) {
-        console.log('break')
-        return false;
-    }
-    else {
-        btnGroup.removeClass('showtype_active-list');
-        btnGroup.addClass('showtype_active-map');
-        $('.show-list').slideUp(300);
-        $('.map').slideDown(300);
-        console.log('show map');
-    } 
-}
+//     if (isActive) {
+//         console.log('break')
+//         return false;
+//     }
+//     else {
+//         btnGroup.removeClass('showtype_active-list');
+//         btnGroup.addClass('showtype_active-map');
+//         $('.show-list').slideUp(300);
+//         $('.map').slideDown(300);
+//         console.log('show map');
+//     } 
+// }
+// function showList() {    
+//     var isActive = $('.showtype').hasClass('showtype_active-list');
+//     var btnGroup = $('.showtype');
 
-// показать список
-function showList() {    
-    var isActive = $('.showtype').hasClass('showtype_active-list');
-    var btnGroup = $('.showtype');
-
-    if (isActive) {
-        console.log('break')
-        return false;
-    }
-    else {
-        btnGroup.removeClass('showtype_active-map');
-        btnGroup.addClass('showtype_active-list');
-        $('.map').slideUp(300);
-        $('.show-list').slideDown(300);
-        console.log('show list');
-    } 
-}
-
-
-// triggers
-$(document).ready(function() {   
-    $('.showtype_map').click(showMap);    
-    $('.showtype_list').click(showList);    
-});
-
-
-// $(document).ready(function() { 
-
-//     $(window).on('resize scroll', function() {
-//         if ( $('.counter').visible() ) {
-//            $('.counter').addClass('wow'); 
-//            $('.counter').each(function() { 
-//                 var $this = $(this), 
-//                 countTo = $this.attr('data-count-to'); 
-
-//                 $({ countNum: $this.text()}).animate({ 
-//                 countNum: countTo 
-//                 }, 
-
-//                 { 
-//                     duration: 2000, 
-//                     easing:'swing', 
-//                         step: function() { 
-//                         $this.text(Math.floor(this.countNum)); 
-//                         }, 
-//                     complete: function() { 
-//                         $this.text(this.countNum); 
-//                     } 
-//                 });
-//             });
-//         }
-//     });
+//     if (isActive) {
+//         console.log('break')
+//         return false;
+//     }
+//     else {
+//         btnGroup.removeClass('showtype_active-map');
+//         btnGroup.addClass('showtype_active-list');
+//         $('.map').slideUp(300);
+//         $('.show-list').slideDown(300);
+//         console.log('show list');
+//     } 
+// }
+// $(document).ready(function() {   
+//     $('.showtype_map').click(showMap);    
+//     $('.showtype_list').click(showList);    
 // });
 
+$(document).ready(function(){
+	r=($('.inner-catalog-list').find('.catalog-link').length);
+	if(r>8) {
+		$('.catalog-list.inner-catalog-list').addClass('minified-catalog');
+		$('.minified-catalog-button').show();
+	} else {
+		$('.minified-catalog-button').hide();
+	}
+	$('.minified-catalog-button').click(function(){
+		$(this).hide();
+		$('.minified-catalog').removeClass('minified-catalog');
+	});
 
-
-
-
-
-
-(function($){
-
-    /**
-     * Copyright 2012, Digital Fusion
-     * Licensed under the MIT license.
-     * http://teamdf.com/jquery-plugins/license/
-     *
-     * @author Sam Sehnert
-     * @desc A small plugin that checks whether elements are within
-     *       the user visible viewport of a web browser.
-     *       only accounts for vertical position, not horizontal.
-     */
-    var $w=$(window);
-    $.fn.visible = function(partial,hidden,direction,container){
-
-        if (this.length < 1)
-            return;
-    
-    // Set direction default to 'both'.
-    direction = direction || 'both';
-        
-        var $t          = this.length > 1 ? this.eq(0) : this,
-                        isContained = typeof container !== 'undefined' && container !== null,
-                        $c                = isContained ? $(container) : $w,
-                        wPosition        = isContained ? $c.position() : 0,
-            t           = $t.get(0),
-            vpWidth     = $c.outerWidth(),
-            vpHeight    = $c.outerHeight(),
-            clientSize  = hidden === true ? t.offsetWidth * t.offsetHeight : true;
-
-        if (typeof t.getBoundingClientRect === 'function'){
-
-            // Use this native browser method, if available.
-            var rec = t.getBoundingClientRect(),
-                tViz = isContained ?
-                                                rec.top - wPosition.top >= 0 && rec.top < vpHeight + wPosition.top :
-                                                rec.top >= 0 && rec.top < vpHeight,
-                bViz = isContained ?
-                                                rec.bottom - wPosition.top > 0 && rec.bottom <= vpHeight + wPosition.top :
-                                                rec.bottom > 0 && rec.bottom <= vpHeight,
-                lViz = isContained ?
-                                                rec.left - wPosition.left >= 0 && rec.left < vpWidth + wPosition.left :
-                                                rec.left >= 0 && rec.left <  vpWidth,
-                rViz = isContained ?
-                                                rec.right - wPosition.left > 0  && rec.right < vpWidth + wPosition.left  :
-                                                rec.right > 0 && rec.right <= vpWidth,
-                vVisible   = partial ? tViz || bViz : tViz && bViz,
-                hVisible   = partial ? lViz || rViz : lViz && rViz,
-        vVisible = (rec.top < 0 && rec.bottom > vpHeight) ? true : vVisible,
-                hVisible = (rec.left < 0 && rec.right > vpWidth) ? true : hVisible;
-
-            if(direction === 'both')
-                return clientSize && vVisible && hVisible;
-            else if(direction === 'vertical')
-                return clientSize && vVisible;
-            else if(direction === 'horizontal')
-                return clientSize && hVisible;
-        } else {
-
-            var viewTop                 = isContained ? 0 : wPosition,
-                viewBottom      = viewTop + vpHeight,
-                viewLeft        = $c.scrollLeft(),
-                viewRight       = viewLeft + vpWidth,
-                position          = $t.position(),
-                _top            = position.top,
-                _bottom         = _top + $t.height(),
-                _left           = position.left,
-                _right          = _left + $t.width(),
-                compareTop      = partial === true ? _bottom : _top,
-                compareBottom   = partial === true ? _top : _bottom,
-                compareLeft     = partial === true ? _right : _left,
-                compareRight    = partial === true ? _left : _right;
-
-            if(direction === 'both')
-                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop)) && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
-            else if(direction === 'vertical')
-                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-            else if(direction === 'horizontal')
-                return !!clientSize && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
-        }
-    };
-
-})(jQuery);
+});

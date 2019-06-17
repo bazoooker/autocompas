@@ -30,8 +30,11 @@
 	background-image: url(/img/logo_part-stripe.png); 
 	@include bg-contain;
 
-	&:hover:after {
-		animation: animate-logo .4s ease;
+	&.forward-anim:hover:after {
+		animation: animate-logo-f .4s ease;
+	}
+	&.backward-anim:hover:after {
+		animation: animate-logo-b .4s ease;
 	}
 	
 	&:after {

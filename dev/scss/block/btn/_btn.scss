@@ -115,9 +115,22 @@ input.btn {
 	font-size: 1.6rem;
 	font-weight: 600;
 	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+    	.btn-burger__bar:nth-child(1) {
+    		width: 1.9rem;
+    	}
+    	.btn-burger__bar:nth-child(2) {
+    		width: 1.3rem;
+    	}
+    	.btn-burger__bar:nth-child(3) {
+    		width: 1.7rem
+    	}
+    }
 
 	&:visited,
-	&:active {color: #fff;}
+	&:active,
+	&:focus {color: #fff;}
 
 	&:before {
 		@include pseudo;
@@ -129,6 +142,8 @@ input.btn {
 	    background: transparent;
 	    border-bottom: 2px solid #fff;
 	    border-right: 2px solid #fff;
+	    transition: 280ms;
+	    transition-delay: 20ms;
 	}
 }
 
@@ -137,11 +152,27 @@ input.btn {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     // width: 5.5rem;
     // height: 5rem;
     // padding: 1.5rem 1.7rem;
     transition: 200ms;
+
+    &_active {
+    	.btn-burger__bar:nth-child(1) {
+    		width: 1.9rem;
+    	}
+    	.btn-burger__bar:nth-child(2) {
+    		width: 1.3rem;
+    	}
+    	.btn-burger__bar:nth-child(3) {
+    		width: 1.7rem
+    	}
+    }
+    &_active::before {
+    	// animation: btn-burger-anim 300ms linear;
+    	transform: rotate(-135deg);
+    }
 }
 
 .btn-burger__bar {
@@ -149,11 +180,7 @@ input.btn {
     height: 3px;
     margin-bottom: .3rem;
     background: #fff;
-    -webkit-transition: 200ms;
-    -o-transition: 200ms;
-    transition: 200ms;
-    -webkit-transform-origin: center, center;
-    -ms-transform-origin: center, center;
+    transition: 300ms;
     transform-origin: center, center;
 }
 
@@ -241,5 +268,18 @@ input.btn {
 	.btn_download {
 		font-size: 1.5rem;
 		line-height: 1.8rem;
+	}
+}
+
+
+@keyframes btn-burger-anim {
+	0% {
+		top: 48%;
+	}
+	50% {
+		top: 55%;
+	}
+	100% {
+		top: 48%;
 	}
 }

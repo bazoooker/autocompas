@@ -20,7 +20,7 @@
 .product__art,
 .product__brand,
 .product__name {
-	padding: 1rem 1.1rem;
+	padding: 0 1.3rem 0 0;
 }
 
 .product__name {
@@ -63,7 +63,6 @@
 
 
 @media screen and (max-width: 1023px) {
-
 	.product {
 		@include flex-row(wrap, space-between, center);
 	}
@@ -81,21 +80,20 @@
 	.product__price {
 		margin: 1.2rem 1.2rem 1.2rem 0;
 	}
-
 	.product__price {
 		position: relative;
 		flex: 0 0 20rem;
-		background-color: #efefef;
+		background-color: transparent;
 		padding-left: 8rem;
 		&::before {
 			position: absolute;
 			content: 'Цена:';
-			line-height: 38px;
+			// line-height: 38px;
 			left: 0;
 			top: 0;
 			height: 100%;
 			width: 7rem;
-			padding: 0 1rem;
+			padding: 0 1rem 0 0;
 			font-weight: 300;
 			color: gray;
 		}
@@ -114,6 +112,7 @@
 		max-width: 100%;
 		background-color: transparent;
 		padding-left: 15rem;
+		margin-bottom: 7px;
 		&::before {
 			position: absolute;
 			line-height: 38px;

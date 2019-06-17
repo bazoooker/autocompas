@@ -1,0 +1,23 @@
+.pop-up-message {
+	position: fixed;
+    left: 30px;
+    bottom: 30px;
+    z-index: 3;
+    background: #004eb3;
+    padding: 10px 25px;
+	
+	transform-origin: 50% 0;
+    transform: translateY(250px);
+    opacity: 0;
+    transition: 0ms;
+    border-radius: 7px;
+
+    p {color: #fff;margin-bottom: 0 !important;}
+
+
+    &.visible {
+		transform: none;
+		opacity: 1;
+    	transition: 200ms;
+    }
+}

@@ -76,3 +76,9 @@ $pagination-link-size: 40px;
 		background-color: #fff;
 	}
 }
+
+
+@media screen and (max-width: 450px) {
+		.pagination-link.pagination-link_end,
+		.pagination-link.pagination-link_beginning {display: none;}
+};

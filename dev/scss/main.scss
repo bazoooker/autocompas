@@ -80,6 +80,9 @@
 // product-detail
 @import "block/product-detail/product-detail";
 
+// register
+@import "block/register-table/register-table";
+
 
 
 
@@ -96,6 +99,9 @@
 // menu
 @import "block/menu/menu";
 
+// all bitrix stuff
+@import "block/bitrix/bitrix";
+
 // navigation
 @import "block/pagination/pagination";
 
@@ -108,7 +114,7 @@
 // well
 // @import "block/well";
 // @import "block/ref";
-// @import "block/lead";
+@import "block/lead/lead";
 
 // animate lib
 // @import "block/animate/animate";

@@ -140,3 +140,25 @@
 		}
 	}
 }
+
+@media screen and (max-width: 667px) {
+	.category_full-height {
+		text-align: center;
+	}
+	.category_half-height {justify-content: center;}
+	.category__img,
+	.category__info {
+		flex: 0 0 50%;
+		// max-width: 50%;
+		// min-width: 50%;
+	}
+}
+
+
+@media screen and (max-width: 374px) {
+	.category_half-height {
+		p:not(:first-child) {
+			display: none;
+		}
+	}
+}

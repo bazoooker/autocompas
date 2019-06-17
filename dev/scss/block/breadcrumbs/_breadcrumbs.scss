@@ -32,3 +32,19 @@
 		text-decoration: underline;
 	}
 }
+
+@media screen and (max-width: 1023px) {
+	.breadcrumbs__item {
+		display: none;
+	}
+	.breadcrumbs__item:nth-child(1) {
+		display: inline-block;
+	}
+	.breadcrumbs__item:nth-child(1) {
+		&::after {display: none;}
+	}
+
+}
+@media screen and (max-width: 667px) {
+	.breadcrumbs {display: none;}
+}

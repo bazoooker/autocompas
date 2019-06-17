@@ -21,3 +21,30 @@
 		}
 	}
 }
+
+
+
+@media screen and (max-width: 1199px) {
+	.catalog-slider {
+		.container {
+			width: 87%;
+		}
+	}
+}
+
+
+@media screen and (max-width: 1199px) {
+	.catalog-slider {
+		.container {
+			width: 82%;
+
+			.swiper-button-next {
+				right: -2rem;
+			}
+
+			.swiper-button-prev {
+				left: -2rem;
+			}
+		}
+	}
+}

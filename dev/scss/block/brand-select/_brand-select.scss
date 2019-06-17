@@ -25,3 +25,17 @@
 
 .brand-select__select {
 }
+
+@media screen and (max-width: 768px) {
+	.brand-select {
+		width: 290px;
+		form {width: 100%;}
+		input {width: 100%;}
+	}
+	.brand-select__select {
+		margin-bottom: 1rem;
+		width: 100% !important;
+		flex: 1 1 100% !important;
+		max-width: 100% !important;
+	}	
+}

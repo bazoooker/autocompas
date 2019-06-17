@@ -6,10 +6,7 @@
     height: 100%;
 }
 
-.swiper-container-catalog {
-	
-
-}
+.swiper-container-catalog {}
 
 
 
@@ -276,6 +273,13 @@
 // 	background: $color_main;
 // }
 .swiper-button-disabled {opacity: .2 !important;}
+
+
+// @media screen and (max-width: 1199) {
+// 	.swiper-container-catalog {
+// 		width: 90%;
+// 	}
+// }
 
 
 @media screen and (max-width: 569px) {

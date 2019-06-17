@@ -28,12 +28,6 @@
 	}
 
 	h1:first-child,h2:first-child,h3:first-child,h4:first-child,h5:first-child,h6:first-child { margin-top: 0; }
-
-	// только для демонстрации сетки
-	p {
-		padding: 15px;
-		background-color: lightgray;
-	}
 }
 
 
@@ -84,6 +78,29 @@
 	max-width: 100% !important;
 }
 
+.img-resp {
+	width: 100%;
+	height: auto;
+}
+
+.mb-1 {
+	margin-bottom: 1rem !important;
+}
+.mb-2 {
+	margin-bottom: 2rem !important;
+}
+
+.text-center {
+  text-align: center !important; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.uppercase {
+  text-transform: uppercase; }
 
 @media screen and (max-width: 992px) {
 	.col-10 {

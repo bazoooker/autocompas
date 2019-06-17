@@ -50,7 +50,7 @@
 		z-index: 2;
 
 		.btn-burger {
-		    display: flex;
+		    display: none;
 		    flex-flow: column nowrap;
 		    justify-content: center;
 		    align-items: center;
@@ -111,4 +111,123 @@
 	width: 0%;
 	height: 3px;
 	background-color: #e31f25;
+}
+
+
+@media screen and (max-width: 1023px) {
+	.page-header__top-bar {
+		.container {
+			.btn-burger {
+				display: flex;
+			}
+			.nav {display: none;}
+			.user-options {
+				margin-left: 0;
+				margin-right: auto;
+			}
+		}
+	}
+
+	.page-header__content {
+
+		.basket {
+			display: none;
+		}
+	
+		// .container {
+		// 	@include flex-row(wrap, space-between, center);
+		// 	height: 26.6rem;
+		// 	.basket {height: auto;}
+		// 	.company-info {
+		// 		flex: 1 1 100%;
+		// 	}
+		// }
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+	.page-header__bottom-bar {
+		form {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.page-header__top-bar {
+		.container {
+			padding: 0;
+			margin: 0;
+			width: 100%;
+		}
+		.user-options {
+			@include flex-row(nowrap,flex-start,stretch);
+		}
+		.user-options__callback {
+			padding-left: 4.2rem;
+			padding-right: 2rem;
+			&::before {
+				left: 1.4rem;
+			}
+		}
+		.user-options__sign-up,
+		.user-options__sign-in {
+			padding: 0;
+			margin: 0;
+			width: 4rem;
+			flex: 0 0 4rem;
+			height: 4rem;
+			border-right: 1px solid lightgray;
+			span {display: none;}
+			&::before {
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+		}
+	}
+	.page-header__content {
+		.location {
+			display: none;
+		}
+		.logo.animated {
+			flex: 0 0 25rem;
+			background-image: url(/img/logo.png);
+		    background-position: 50% 50%;
+		    background-size: contain;
+		    background-repeat: no-repeat;
+		    &::after {display: none;}
+		}
+	}
+}
+
+
+@media screen and (max-width: 567px) {
+	.page-header__top-bar {
+		.user-options__sign-up,
+		.user-options__sign-in {display: none;}
+	}
+	.page-header__content {
+		.container {
+			height: auto;
+			padding: 2.5rem 0;
+			flex-wrap: wrap;
+			.logo.animated {
+				margin: 0 auto 1rem auto;
+				height: 5.5rem;
+				flex: 0 0 30rem;
+			}
+			.company-info {
+				flex: 1 1 100%;
+				justify-content: center;
+			}
+		}
+	}
+	.page-header__bottom-bar {
+		.container {
+			justify-content: center;
+		}
+		.btn-catalog-brand {display: none;}
+	}	
 }

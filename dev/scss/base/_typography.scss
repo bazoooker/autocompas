@@ -41,7 +41,7 @@ p, span, ul, li, button {
 }
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     &:empty {
         display: none;
     }
@@ -96,10 +96,8 @@ ul {
 }
 
 .form-table.user-table {
-    padding: 40px;
     background-color: #f3f2f2;
     border-radius: 10px;
-    margin-top: 20px;
 
     button, input, optgroup, select, textarea {
         font-family: inherit;
@@ -110,15 +108,16 @@ ul {
         border-radius: 5px;
         outline: none;
         border: 0;
-        box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
-
-        &:hover {
-            box-shadow: 0 0 4px 1px rgba(0,0,0,.1);
-        }
+        border: 1px solid #e0e0e0;
+        
         &:focus {
-            box-shadow: 0 0 4px 1px rgba(0,0,0,.1);
+                border: 1px solid lightgray;
         }
     }
+}
+.user-table-note.field-note {
+    display: inline-block;
+    margin: .8rem;
 }
 .made-by {
     color: #fff;
@@ -191,6 +190,9 @@ ul {
             padding: .7rem 1rem;
         }
     }
+    .form-table.user-table {
+        padding: 20px;
+    }
 }
 @media screen and (max-width: 569px) {
     h1 {
@@ -211,5 +213,10 @@ ul {
         td {
             padding: .5rem .5rem;
         }
+    }
+}
+@media screen and (max-width: 413px) {
+    .form-table.user-table {
+        padding: 13px;
     }
 }

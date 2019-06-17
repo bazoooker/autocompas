@@ -8,11 +8,13 @@
 
 	background-color: #fff;
 	color: #fff;
-	padding-bottom: 50px;
 
 	opacity: 0;
-	z-index: -2;
+	z-index: 11;
 	box-shadow: 0 0 35px 1px rgba(0,0,0,.2);
+
+	overflow-y: auto;
+    overflow-x: hidden;
 
 	transition: $tr;
 	.container {
@@ -22,13 +24,23 @@
 	&.main-menu_active {
 		transform: translateY(0);
 		opacity: 1;
-		z-index: 10;
+		.user-options__callback {
+		    padding: 1.2rem 0 1.2rem 3rem;
+		    border: 0;
+		    &::before {
+				left: 0;
+		    }
+		    &:hover {
+		    	background-color: transparent;
+		    }
+		}
 	}
 
 	.btn-catalog {
-		width: 192px;
+		width: 100%;
 		margin: 0 auto;
 		padding: 11px 15px;
+		justify-content: center;
 		
 		color: #fff;
 		font-size: 1.6rem;
@@ -46,6 +58,10 @@
 			display: none;
 		}
 
+		.btn-burger {
+			margin-right: 2rem;
+		}
+
 		.btn-burger__bar {
 		    background-color: #fff;
 		    &:last-child {margin-bottom: 0;}
@@ -59,7 +75,7 @@
 	}
 	.user-options__sign-in {
 		&::before {
-			background-image: url(/img/icons/sign-in.png);
+			background-image: url(/img/icons/lock.png);
 		}
 	}
 
@@ -118,6 +134,7 @@
 
 	.company-info {
 		display: block;
+		margin-bottom: 4rem;
 
 		.phone {
 			font-size: 2.8rem;
@@ -126,6 +143,7 @@
 		}
 		a {
 			display: block;
+			cursor: pointer;
 		}
 	}
 
@@ -250,22 +268,5 @@
 		background-position: bottom left;
 		background-repeat: no-repeat;
 		background-size: 769px;
-	}
-	// 	.tel {
-	// 		display: block;
-	// 		margin-right: 4rem;
-	// 		text-align: center;
-	// 		margin: 0;
-	// 	}
-	// }
-}
-
-@media screen and (max-width: 614px) {
-	.main-menu__header {
-		@include flex-col(nowrap, space-between, center);
-		// height: 24rem;
-	}
-	.main-menu__nav {
-		flex: 1 1 100%;
 	}
 }

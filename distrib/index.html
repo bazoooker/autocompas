@@ -17,8 +17,10 @@
         <!-- meta -->
         <meta content="Автокомпас" name="description" />
         <meta content="Автокомпас" name="keywords" />
-
+        
         <!-- styles -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+        crossorigin="anonymous">
         <link href="css/swiper.min.css" rel="stylesheet"/>            
         <link href="css/main.css" rel="stylesheet"/>        <!-- gulp -->
         <link href="css/custom.css" rel="stylesheet"/>      <!-- css no preprocessor -->
@@ -37,10 +39,6 @@
                 <div class="container">
                     <nav class="nav">
                         <a class="active" href="#">Главная</a>
-                        <!-- <a href="#">О компании</a>
-                        <a href="#">Оплата и доставка</a>
-                        <a href="#">Оптовикам</a>
-                        <a href="#">Партнеры</a> -->
                         <a href="/spisok-podgrupp.html">Список подгрупп</a>
                         <a href="/spisok-tovarov.html">Список товаров</a>
                         <a href="#">Партнеры</a>
@@ -50,6 +48,11 @@
                     <div class="user-options">
                         <a href="#" class="user-options__cabinet">Личный кабинет</a>
                         <a href="#" class="user-options__callback">Перезвоните мне!</a>
+                    </div>
+                    <div class="btn-burger js-open-menu">
+                        <i class="btn-burger__bar"></i>
+                        <i class="btn-burger__bar"></i>
+                        <i class="btn-burger__bar"></i>
                     </div>
                 </div>
             </div>
@@ -68,9 +71,24 @@
                         <div class="location">
                             Барнаул
                         </div>
-                        <a href="tel:+73852464700" class="phone">
+                        <div class="phone">
+                            <!-- <a href="tel:+73852464700">ff</a> -->
                             <span class="phone__city-code">+7(3852)</span> 46-47-00
-                        </a>
+                            <div class="phone__accordeon">
+                                <a href="tel:+73852464700">
+                                    <span class="phone__city-code">+7(3852)</span> 46-47-00
+                                </a>
+                                <a href="tel:+73852464700">
+                                    <span class="phone__city-code">+7(3852)</span> 46-47-00
+                                </a>
+                                <a href="tel:+73852464700">
+                                    <span class="phone__city-code">+7(3852)</span> 46-47-00
+                                </a>
+                                <a href="tel:+73852464700">
+                                    <span class="phone__city-code">+7(3852)</span> 46-47-00
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,7 +253,7 @@
 
             <div class="catalog-list section-margin">
                 <div class="container">
-                    <div class="flex-row">
+                    <div class="row">
                         <div class="col-3">
                             <a href="" class="catalog-link">
                                 Автостекло
@@ -424,29 +442,46 @@
             </div>
 
 
-
-
             <div class="news bg-gray section-padding">
                 <div class="container section-margin">
-                    <a class="news-item">
-                        <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
-                        <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
-                    </a>
+                    <div class="swiper-container swiper-container-catalog">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a class="news-item">
+                                    <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
+                                    <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="news-item">
+                                    <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
+                                    <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="news-item">
+                                    <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
+                                    <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="news-item">
+                                    <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
+                                    <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="news-item">
+                                    <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
+                                    <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                    <a class="news-item">
-                        <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
-                        <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
-                    </a>
-
-                    <a class="news-item">
-                        <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
-                        <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
-                    </a>
-
-                    <a class="news-item">
-                        <div class="news-item__img" style="background-image: url(/img/bg/bg-news-thumb.jpg);"></div>
-                        <span class="news-item__heading">Чем руководствоваться при выборе свечей зажигания?</span>
-                    </a>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next catalog-slider-btn-next"></div>
+                    <div class="swiper-button-prev catalog-slider-btn-prev"></div>
                 </div>
 
                 <div class="text-center">
@@ -493,11 +528,76 @@
 
 
 
-        <!-- MOBILE SLIDE-IN MENU BEGIN-->
-        <div class="menu">
-            
+        <div class="main-menu main-menu_narrow-right">
+            <span class="main-menu__btn-close js-open-menu"></span>
+            <div class="main-menu__header">
+                <a href="/" class="logo" style="width: 100%;"></a>
+
+                <div class="company-info">
+                    <a href="tel:+73852464700" class="phone">
+                        <span class="phone__city-code">+7(3852)</span> 46-47-00
+                    </a>
+                    <a href="tel:+73852464700" class="phone">
+                        <span class="phone__city-code">+7(3852)</span> 46-98-09
+                    </a>
+                    <a href="tel:+73852464700" class="phone">
+                        <span class="phone__city-code">+7(3852)</span> 46-98-88
+                    </a>
+                    <a href="tel:+73852464700" class="phone">
+                        <span class="phone__city-code">+7(3852)</span> 46-44-09
+                    </a>
+                </div>
+
+                <a href="/personal/cart/" class="basket">
+                    <div class="basket__inner">
+                          <span class="basket__contents">Ваша корзина пуста</span>
+                    </div>
+                </a>
+
+                <a href="/catalog/" class="btn-catalog">
+                    <div class="btn-burger js-open-menu">
+                        <i class="btn-burger__bar"></i>
+                        <i class="btn-burger__bar"></i>
+                        <i class="btn-burger__bar"></i>
+                    </div>
+                    Каталог товаров
+                </a>
+            </div>
+
+            <div class="main-menu__nav">
+                <nav class="nav">
+                    <a class="active" href="/index.php">Главная</a>
+                    <a href="/o-kompanii/">О компании</a>
+                    <a href="/oplata-i-dostavka/">Оплата и доставка</a>
+                    <a href="/optovikam/">Оптовикам</a>
+                    <a href="/partnery/">Партнеры</a>
+                    <a href="/kontakty/">Контакты</a>
+                </nav>
+                        
+                <div class="user-options">
+                    <a href="/auth" class="user-options__sign-in">Войти</a>
+                    <a href="/auth/?register=yes" class="user-options__sign-up">Регистрация</a>
+                    <a href="#" class="user-options__callback callback-link">Перезвоните мне!</a>
+                </div>
+
+
+                
+                <form action="/catalog/search/" id="title-search">
+                     <div class="search-form">
+                    <input id="title-search-input" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off" placeholder="Например, аккумулятор">
+                    <!-- <input name="s"  placeholder="Например, гидроизоляция" type="submit" value="Поиск" /> -->
+                    <input type="submit" id="search-submit" value="">
+                    </div>
+                </form>
+                
+                <div class="legal">
+                    <p>Оставляя данные на этом сайте вы соглашаетесь с поилиткой обработки персональных данных.</p>
+                    <p><a href="">Ознакомиться с политикой</a></p>
+                </div>
+            </div>
+
         </div>
-        <div class="overlay js-overlay"></div>
+        <div class="overlay js-open-menu"></div>
         <!-- MOBILE SLIDE-IN MENU END-->
 
 
@@ -545,7 +645,6 @@
         
         <!-- SCROLL-TO-TOP BEGIN -->
         <div class="to-top js-scroll-to-top">
-            <span class="to-top__text">Наверх</span>
         </div>
         <!-- SCROLL-TO-TOP END -->
         

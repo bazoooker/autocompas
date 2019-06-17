@@ -36,6 +36,8 @@ $arrow_color: $gray !default;
   padding-left: $dropdown_padding;
   padding-right: $dropdown_padding + 12;
   position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
   text-align: left !important;
   -webkit-transition  
 : all 0.2s ease-in-out;
@@ -50,7 +52,7 @@ $arrow_color: $gray !default;
     border-color: darken($gray_light, 5%);
   }
   &:active, &:focus {
-    border-color: #28aa8c;
+    border-color: lightgray;
   }
   // Arrow
   &:after { 
@@ -209,8 +211,12 @@ $arrow_color: $gray !default;
 
 @media screen and (max-width: 768px) {
   .nice-select {
+    width: 100%;
+    padding-left: 9px;
+    padding-right: 18px;
     .current {
       width: 100%;
+      font-size: 1.3rem;
     }
   }
 }

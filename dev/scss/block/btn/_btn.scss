@@ -9,6 +9,7 @@ button.btn {
 	text-decoration: none;
 	font-weight: 300;
 	background-color: $color_main-b;
+	border: 1px solid $color_main-b;
 	padding: .8rem 3.5rem;
 	cursor: pointer;
 	border-radius: 4px;

@@ -6,5 +6,27 @@
 }
 
 .inner-page__controls {
-	@include flex-row(nowrap, space-between, stretch);
+	@include flex-row(nowrap, space-between, flex-start);
+}
+
+
+@media screen and (max-width: 667px) {
+	.inner-page__controls {
+		@include flex-row(nowrap, center, stretch);
+		padding: 2.4rem 0;
+		background-color: #efefef;
+		margin-bottom: -2.4rem;
+	}	
+}
+
+@media screen and (max-width: 413px) {
+	.inner-page__controls {
+		padding: 2rem 0;
+		.nice-select,
+		.nice-select.open {
+			width: 160px;
+			flex: 0 0 160px;
+			max-width: 160px;
+		}
+	}	
 }
